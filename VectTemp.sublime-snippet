@@ -66,8 +66,13 @@ const int N = 3e5, M = N;
 void Solve_main() {
 	// int k, p, q; 
 	// int l, r;
-
+	
 	int i, j, m, n;
+	cin >> n;
+	vi v(n);
+	fo(i, n){
+		cin >> v[i];
+	}
 
 }
 
@@ -112,7 +117,7 @@ T npow(T base, T exp) {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>MT</tabTrigger>
+	 <tabTrigger>VectTemp</tabTrigger> 
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
