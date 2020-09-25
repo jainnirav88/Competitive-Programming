@@ -1,29 +1,30 @@
 <snippet>
 	<content><![CDATA[
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> // 85 96
 using namespace std;
 
-#define fo(i,n)			for(i=0; i<(n); i++)
-#define Fo(i,k,n)		for(i=k;((k)<(n))?(i<n):(i>(n));((k)<(n))?(i++):(i--))
-#define tr(it,a)		for(auto it = (a).begin(); it != (a).end(); it++)
+#define fo(i,n)			for(i=0; i<(n); ++i)
+#define Fo(i,k,n)		for(i=k;((k)<(n))?(i<n):(i>(n));((k)<(n))?(++i):(--i))
+#define tr(it,a)		for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll				long long
-#define siz(x)			int((x).size())
-#define si(x)			scanf("%d", &x)
-#define sl(x)			scanf("%lld", &x)
-#define ss(s)			scanf("%s", s)
-#define pi(x)			printf("%d\n", x)
-#define pl(x)			printf("%lld\n", x)
-#define ps(s)			printf("%s\n", s)
+#define siz(x)			((int)(x).size())
+#define si(x)			scanf("%d", &x);
+#define sl(x)			scanf("%lld", &x);
+#define ss(s)			scanf("%s", s);
+#define pi(x)			printf("%d\n", x);
+#define pl(x)			printf("%lld\n", x);
+#define ps(s)			printf("%s\n", s);
 #define print(x)		cout << x << '\n'
 #define prints(x)		cout << x << " "
-#define pb				push_back
+#define eb				emplace_back
 #define mp				make_pair
 #define F				first
 #define S				second
+#define o2(x)			((x)*(x))
 #define all(x)			(x).begin(), (x).end()
-#define clr(x,k)		memset(x, k, sizeof(x))
-#define sortall(x)		sort(all(x))
-#define printv(i,v)		for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
+#define clr(x,k)		memset((x), (k), sizeof((x)));
+#define sortall(x)		sort(all(x));
+#define printv(i,v)		for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n';
 #define print2dv(j,i,V)	for(j=0;j<siz(V);j++){printv(i, V[j]);}
 #define PI				3.1415926535897932384626
 
@@ -42,12 +43,17 @@ typedef vector<vl>		vvl;
 typedef vector<vc>		vvc;
 typedef vector<vb>		vvb;
 
+void debug_out() { cout << '\n'; }
+template <typename T, typename... R>
+void debug_out(const T &ff, const R &... rr) {
+	cout << ff << " ";
+	debug_out(rr...);
+}
+
 #ifndef ONLINE_JUDGE
-#define deb(x)			cout << #x << "=" << x << '\n'
-#define deb2(x,y)		cout << #x << "=" << x << "," << #y << "=" << y << '\n'
+#define deb(...) cout << "[" << #__VA_ARGS__ << "]: ", debug_out(__VA_ARGS__);
 #else
-#define deb(x)
-#define deb2(x,y)
+#define deb(...) ;
 #endif
 
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
@@ -64,15 +70,20 @@ const int N = 3e5, M = N;
 //-----------------------------------------------------------------------------
 
 void Solve_main() {
-	// int k, p, q; 
+	// int x, y, p, q;
 	// int l, r;
-	
-	int i, j, m, n;
+	// int res = 0, ans = 0;
+
+	int n, m, k;
+	int i, j;
+
 	cin >> n;
 	vi v(n);
 	fo(i, n){
 		cin >> v[i];
 	}
+	// sortall(v);
+
 
 }
 
@@ -83,11 +94,16 @@ int main() {
 	srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 
 	// cout << setprecision(12) << fixed;
-	int t = 1;
-	cin >> t;
-	while(t--) {
+	int tc = 1;
+	cin >> tc;
+	while(tc--) {
 		Solve_main();
 	}
+
+	// #ifndef ONLINE_JUDGE
+	// 	cout<<"time cost:"<<1.0*clock()/CLOCKS_PER_SEC<<"s"<<'\n';
+	// 	system("pause");
+	// #endif
 
 	return 0;
 }
@@ -117,7 +133,7 @@ T npow(T base, T exp) {
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	 <tabTrigger>VectTemp</tabTrigger> 
+	<tabTrigger>VT</tabTrigger> 
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
