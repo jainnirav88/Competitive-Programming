@@ -1,19 +1,19 @@
 <snippet>
 	<content><![CDATA[
-#include<bits/stdc++.h> // 85 96
+#include<bits/stdc++.h> // 91 102
 using namespace std;
 
-#define fo(i,n)			for(i=0; i<(n); ++i)
-#define Fo(i,k,n)		for(i=k;((k)<(n))?(i<n):(i>(n));((k)<(n))?(++i):(--i))
+#define rep(i,k,n)		for(i=(k); i<(n); ++i)
+#define repr(i,k,n)		for(i=(k); i>(n); --i)
 #define tr(it,a)		for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll				long long
 #define siz(x)			((int)(x).size())
-#define si(x)			scanf("%d", &x);
-#define sl(x)			scanf("%lld", &x);
-#define ss(s)			scanf("%s", s);
-#define pi(x)			printf("%d\n", x);
-#define pl(x)			printf("%lld\n", x);
-#define ps(s)			printf("%s\n", s);
+#define si(x)			scanf("%d", &x)
+#define sl(x)			scanf("%lld", &x)
+#define ss(s)			scanf("%s", s)
+#define pi(x)			printf("%d\n", x)
+#define pl(x)			printf("%lld\n", x)
+#define ps(s)			printf("%s\n", s)
 #define print(x)		cout << x << '\n'
 #define prints(x)		cout << x << " "
 #define eb				emplace_back
@@ -22,9 +22,11 @@ using namespace std;
 #define S				second
 #define o2(x)			((x)*(x))
 #define all(x)			(x).begin(), (x).end()
-#define clr(x,k)		memset((x), (k), sizeof((x)));
-#define sortall(x)		sort(all(x));
-#define printv(i,v)		for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n';
+#define allr(x)			(x).rbegin(), (x).rend()
+#define clr(x,k)		memset((x), (k), sizeof((x)))
+#define sortall(x)		sort(all(x))
+#define sortalld(x)		sort(allr(x))
+#define printv(i,v)		for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
 #define print2dv(j,i,V)	for(j=0;j<siz(V);j++){printv(i, V[j]);}
 #define PI				3.1415926535897932384626
 
@@ -43,17 +45,21 @@ typedef vector<vl>		vvl;
 typedef vector<vc>		vvc;
 typedef vector<vb>		vvb;
 
-void debug_out() { cout << '\n'; }
-template <typename T, typename... R>
-void debug_out(const T &ff, const R &... rr) {
-	cout << ff << " ";
-	debug_out(rr...);
+template <typename Arg1>
+void debug_out(const char* name, Arg1&& arg1){
+	cout << name << " = " << arg1  << " ]" << '\n';
+}
+template <typename Arg1, typename... Args>
+void debug_out(const char* names, Arg1&& arg1, Args&&... args){
+	const char* comma = strchr(names + 1, ',');
+	cout.write(names, comma - names) << " = " << arg1 <<",";
+	debug_out(comma+1, args...);
 }
 
 #ifndef ONLINE_JUDGE
-#define deb(...) cout << "[" << #__VA_ARGS__ << "]: ", debug_out(__VA_ARGS__);
+#define deb(...) cout << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
 #else
-#define deb(...) ;
+#define deb(...)
 #endif
 
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
@@ -79,7 +85,7 @@ void Solve_main() {
 
 	cin >> n;
 	vi v(n);
-	fo(i, n){
+	rep(i, 0, n){
 		cin >> v[i];
 	}
 	// sortall(v);
@@ -100,11 +106,7 @@ int main() {
 		Solve_main();
 	}
 
-	// #ifndef ONLINE_JUDGE
-	// 	cout<<"time cost:"<<1.0*clock()/CLOCKS_PER_SEC<<"s"<<'\n';
-	// 	system("pause");
-	// #endif
-
+	cerr<<"[time:"<<1.0*clock()/CLOCKS_PER_SEC<<"s] ";
 	return 0;
 }
 
