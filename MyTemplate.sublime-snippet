@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 84 95
+#include<bits/stdc++.h> // 81 92
 using namespace std;
 
 #define rep(i,k,n)      for(i=(k); i<(n); ++i)
@@ -8,12 +8,6 @@ using namespace std;
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
-#define si(x)           scanf("%d", &x)
-#define sl(x)           scanf("%lld", &x)
-#define ss(s)           scanf("%s", s)
-#define pi(x)           printf("%d\n", x)
-#define pl(x)           printf("%lld\n", x)
-#define ps(s)           printf("%s\n", s)
 #define print(x)        cout << x << '\n'
 #define prints(x)       cout << x << " "
 #define eb              emplace_back
@@ -28,18 +22,20 @@ using namespace std;
 #define sortalld(x)     sort(allr(x))
 #define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
 #define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
+#define out(x)          cout << (x ? "YES" : "NO") << '\n';
 #define PI              3.1415926535897932384626
+#define inf             INT_MAX
+#define ninf            INT_MIN
+#define int             long long
 
 typedef pair<int,int>   pii;
 typedef pair<ll,ll>     pll;
-typedef pair<char,char> pcc;
 typedef vector<int>     vi;
 typedef vector<ll>      vl;
 typedef vector<char>    vc;
 typedef vector<bool>    vb;
 typedef vector<pii>     vpii;
 typedef vector<pll>     vpll;
-typedef vector<pcc>     vpcc;
 typedef vector<vi>      vvi;
 typedef vector<vl>      vvl;
 typedef vector<vc>      vvc;
@@ -73,13 +69,14 @@ T npow(T base, T exp); // (base^exp)
 const int mod = 1e9+7;
 const int N = 3e5, M = N;
 
+/* 
+->Do not forget to check the edge cases. 
+->Make sure you are submiting the right file.
+*/
+
 //-----------------------------------------------------------------------------
 
 void Solve_main() {
-    // int x, y, p, q;
-    // int l, r;
-    // int res = 0, ans = 0;
-
     int n, m, k;
     int i, j;
 
@@ -88,7 +85,7 @@ void Solve_main() {
 
 //-----------------------------------------------------------------------------
 
-int main() {
+int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
     srand(chrono::high_resolution_clock::now().time_since_epoch().count());
 

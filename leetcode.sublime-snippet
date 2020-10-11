@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 88 99
+#include<bits/stdc++.h> // 75
 using namespace std;
 
 #define rep(i,k,n)      for(i=(k); i<(n); ++i)
@@ -69,45 +69,14 @@ T npow(T base, T exp); // (base^exp)
 const int mod = 1e9+7;
 const int N = 3e5, M = N;
 
-/* 
-->Do not forget to check the edge cases. 
-->Make sure you are submiting the right file.
-*/
+/* Do not forget to check the edge cases. */
+//-----------------------------------------------------------------------------
+
+
 
 //-----------------------------------------------------------------------------
 
-void Solve_main() {
-    int n, m, k;
-    int i, j;
 
-    cin >> n;
-    vi v(n);
-    rep(i, 0, n){
-        cin >> v[i];
-    }
-    // sortall(v);
-
-
-}
-
-//-----------------------------------------------------------------------------
-
-int32_t main() {
-    ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
-    srand(chrono::high_resolution_clock::now().time_since_epoch().count());
-
-    // cout << setprecision(12) << fixed;
-    int tc = 1;
-    cin >> tc;
-    while(tc--) {
-        Solve_main();
-    }
-
-    cerr<<"[time:"<<1.0*clock()/CLOCKS_PER_SEC<<"s] ";
-    return 0;
-}
-
-//-----------------------------------------------------------------------------
 
 int mpow(int base, int exp) {
     base %= mod;
@@ -132,7 +101,7 @@ T npow(T base, T exp) {
 }
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>VT</tabTrigger> 
+    <tabTrigger>Leetcode</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>
