@@ -1,9 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 75
-using namespace std;
-
-#define rep(i,k,n)      for(i=(k); i<(n); ++i)
+#define rep(i,k,n)      for(i=(k); i<(n); ++i) // 67
 #define repr(i,k,n)     for(i=(k); i>(n); --i)
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
@@ -22,11 +19,10 @@ using namespace std;
 #define sortalld(x)     sort(allr(x))
 #define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
 #define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
-#define out(x)          cout << (x ? "YES" : "NO") << '\n';
+#define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
 #define ninf            INT_MIN
-#define int             long long
 
 typedef pair<int,int>   pii;
 typedef pair<ll,ll>     pll;
@@ -58,8 +54,6 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 #define deb(...)
 #endif
 
-mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
-
 int mpow(int base, int exp); // (base^exp)%mod
 // -2'147'483'648(2^31) to +2'147'483'647(2^31-1)
 template<class T>
@@ -75,8 +69,6 @@ const int N = 3e5, M = N;
 
 
 //-----------------------------------------------------------------------------
-
-
 
 int mpow(int base, int exp) {
     base %= mod;

@@ -22,7 +22,7 @@ using namespace std;
 #define sortalld(x)     sort(allr(x))
 #define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
 #define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
-#define out(x)          cout << (x ? "YES" : "NO") << '\n';
+#define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
 #define ninf            INT_MIN
