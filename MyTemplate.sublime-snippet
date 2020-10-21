@@ -19,7 +19,7 @@ using namespace std;
 #define allr(x)         (x).rbegin(), (x).rend()
 #define clr(x,k)        memset((x), (k), sizeof((x)))
 #define sortall(x)      sort(all(x))
-#define sortalld(x)     sort(allr(x))
+#define sortalld(x)     sort(all(x), greater<int>())
 #define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
 #define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
 #define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
