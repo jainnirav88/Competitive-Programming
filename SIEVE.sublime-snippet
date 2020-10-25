@@ -1,0 +1,35 @@
+<snippet>
+    <content><![CDATA[
+const int num = 1e7;
+bool comp[num];
+vector<int> primes;
+
+void sieve()
+{
+    memset(comp, 0, sizeof(comp));
+    primes.clear();
+    
+    bool done = false;
+    for(int i=2;i<num;i++){
+        if(!comp[i])
+        {
+            primes.push_back(i);
+            
+            if ((i * i) > num) {
+                done = true;
+            }
+            
+            if (!done){
+                for(int j=i*i;j<num;j+=i){
+                    comp[j]=1;  
+                }
+            } 
+        }
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>SIEVE</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

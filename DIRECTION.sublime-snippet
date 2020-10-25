@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+//         {U, R, D, L}
+// int xa[] = {-1, 0, 1, 0};
+// int ya[] = {0, 1, 0, -1};
+
+//         {LU, U, RU, R, RD, D, LD, L}
+// int xa[] = {-1, -1, -1, 0, 1, 1, 1, 0};
+// int ya[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>DIRECTION</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

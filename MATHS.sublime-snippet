@@ -1,0 +1,98 @@
+<snippet>
+    <content><![CDATA[
+template<class T>
+class Math{
+public:
+    T npow(T base, T exp) {
+        T result = 1;
+        while (exp > 0) {
+            if (exp & 1) result = (result * base);
+            base = (base * base);
+            exp >>= 1;
+        }
+        return result;
+    }
+
+    int mpow(int base, int exp) {
+        base %= mod;
+        int result = 1;
+        while (exp > 0) {
+            if (exp & 1) result = ((long long)result * base) % mod;
+            base = ((long long)base * base) % mod;
+            exp >>= 1;
+        }
+        return result;
+    }
+
+// -----------------------
+
+    T fact(T p){
+        T res = 1;
+        for(int i = 1; i<=p; i++){
+            res *= i;
+        }
+        return res;
+    }
+
+    T factMod(T p){
+        T res = 1;
+        for(int i = 1; i<=p; i++){
+            res *= i;
+            res %= mod;
+        }
+        return res;
+    }    
+
+// -----------------------
+
+    T nCr(T n, T r){
+        /* TC: O(n) */
+        if(n<r){
+            return 0;
+        }
+
+        T res=1;
+        
+        if(r>(n-r)){
+            r = n-r;
+        }
+
+        for(int i=0; i<r; i++){
+            res *= (n-i);
+            res /= (i+1);
+        }
+
+        return res;
+    }
+
+    T inv(T a){
+    /* TC: O(log(mod)) */
+        T res = mpow(a, mod-2);
+        return res;
+    }
+
+    T nCrMod(T n, T r){
+    /* TC: O(n*log(mod)) */
+        if(n>r){
+            return 0;
+        }
+
+        T res = 1;
+        if(r>(n-r)){
+            r = n-r;
+        }
+
+        for(int i=0; i<r; i++){
+            res = (res%mod * (n-i)%mod)%mod;
+            res = (res * inv(i+1))%mod;
+        }
+
+        return res;
+    }
+};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>CMATHS</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>
