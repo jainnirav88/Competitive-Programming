@@ -2,6 +2,7 @@
     <content><![CDATA[
 template<class T>
 class Math{
+    /* To make object : Math<datatype> mth; */
 public:
     T npow(T base, T exp) {
         T result = 1;
@@ -47,6 +48,7 @@ public:
 
     T nCr(T n, T r){
         /* TC: O(n) */
+        
         if(n<r){
             return 0;
         }
@@ -66,13 +68,15 @@ public:
     }
 
     T inv(T a){
-    /* TC: O(log(mod)) */
+        /* TC: O(log(mod)) */
+
         T res = mpow(a, mod-2);
         return res;
     }
 
     T nCrMod(T n, T r){
-    /* TC: O(n*log(mod)) */
+        /* TC: O(n*log(mod)) */
+        
         if(n>r){
             return 0;
         }

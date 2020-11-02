@@ -1,10 +1,10 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 75 86
+#include<bits/stdc++.h> // 76 87
 using namespace std;
 
-#define rep(i,k,n)      for(i=(k); i<(n); ++i)
-#define repr(i,k,n)     for(i=(k); i>(n); --i)
+#define rep(x,k,n)      for(int x=(k); x<(n); ++x)
+#define repr(x,k,n)     for(int x=(k); x>(n); --x)
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
@@ -20,8 +20,8 @@ using namespace std;
 #define clr(x,k)        memset((x), (k), sizeof((x)))
 #define sortall(x)      sort(all(x))
 #define sortalld(x)     sort(all(x), greater<int>())
-#define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
-#define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
+#define printv(v)       rep(x, 0, siz(v)){prints(v[x]);}cout<<'\n'
+#define print2dv(V)     rep(y, 0, siz(V)){printv(V[y]);}
 #define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
@@ -40,6 +40,7 @@ typedef vector<vi>      vvi;
 typedef vector<vl>      vvl;
 typedef vector<vc>      vvc;
 typedef vector<vb>      vvb;
+typedef vector<vpii>    vvpii;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
@@ -65,14 +66,14 @@ const int N = 3e5, M = N;
 
 /* 
 ->Do not forget to check the edge cases. 
-->Make sure you are submiting the right file.
+->Make sure you are submitting the right file.
+->Do not make "easy->complicated".
 */
 
 //-----------------------------------------------------------------------------
 
 void Solve_main() {
     int n, m, k;
-    int i, j;
 
 
 }
@@ -92,10 +93,7 @@ int32_t main() {
 
     cerr<<"[time:"<<1.0*clock()/CLOCKS_PER_SEC<<"s] ";
     return 0;
-}
-
-//-----------------------------------------------------------------------------
-]]></content>
+}]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>MTEMPLATE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

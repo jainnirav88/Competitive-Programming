@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+rep(i, 0, n){
+    rep(j, 0, m){
+        cin >> v[i][j];
+    }
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>2DREPIN</tabTrigger>
+    <!-- Optional: S    et a scope to limit where the snippet will trigger -->
+    <!-- <scope>solve</scope> -->
+</snippet>

@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
-#define rep(i,k,n)      for(i=(k); i<(n); ++i) // 63
-#define repr(i,k,n)     for(i=(k); i>(n); --i)
+#define rep(x,k,n)      for(int x=(k); x<(n); ++x) // 66
+#define repr(x,k,n)     for(int x=(k); x>(n); --x)
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
@@ -17,8 +17,8 @@
 #define clr(x,k)        memset((x), (k), sizeof((x)))
 #define sortall(x)      sort(all(x))
 #define sortalld(x)     sort(all(x), greater<int>())
-#define printv(i,v)     for(i=0;i<siz(v);i++){prints(v[i]);}cout<<'\n'
-#define print2dv(j,i,V) for(j=0;j<siz(V);j++){printv(i, V[j]);}
+#define printv(v)       rep(x, 0, siz(v)){prints(v[x]);}cout<<'\n'
+#define print2dv(V)     rep(y, 0, siz(V)){printv(V[y]);}
 #define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
@@ -36,6 +36,7 @@ typedef vector<vi>      vvi;
 typedef vector<vl>      vvl;
 typedef vector<vc>      vvc;
 typedef vector<vb>      vvb;
+typedef vector<vpii>    vvpii;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
@@ -57,13 +58,16 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 const int mod = 1e9+7;
 const int N = 3e5, M = N;
 
-/* Do not forget to check the edge cases. */
+/* 
+->Do not forget to check the edge cases.
+->Do not make "easy->complicated".
+*/
+
 //-----------------------------------------------------------------------------
 
 
 
-//-----------------------------------------------------------------------------
-]]></content>
+//-----------------------------------------------------------------------------]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>Leetcode</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
