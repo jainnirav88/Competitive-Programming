@@ -1,32 +1,32 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 76 87
+#include<bits/stdc++.h> // 76 87 "Baklol"
 using namespace std;
 
-#define rep(x,k,n)      for(int x=(k); x<(n); ++x)
-#define repr(x,k,n)     for(int x=(k); x>(n); --x)
+#define rep(x, k, n)    for(int x = (k); x < (n); ++x)
+#define repr(x, k, n)   for(int x = (k); x > (n); --x)
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
-#define print(x)        cout << x << '\n'
-#define prints(x)       cout << x << " "
+#define print(x)        cout << (x) << '\n'
+#define prints(x)       cout << (x) << " "
 #define eb              emplace_back
 #define mp              make_pair
 #define F               first
 #define S               second
-#define o2(x)           ((x)*(x))
+#define o2(x)           ( (x) * (x) )
 #define all(x)          (x).begin(), (x).end()
 #define allr(x)         (x).rbegin(), (x).rend()
-#define clr(x,k)        memset((x), (k), sizeof((x)))
+#define clr(x,k)        memset(x, k, sizeof(x))
 #define sortall(x)      sort(all(x))
 #define sortalld(x)     sort(all(x), greater<int>())
-#define printv(v)       rep(x, 0, siz(v)){prints(v[x]);}cout<<'\n'
-#define print2dv(V)     rep(y, 0, siz(V)){printv(V[y]);}
-#define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
+#define printv(v)       rep(x, 0, siz(v)){ prints(v[x]); } cout << '\n'
+#define print2dv(V)     rep(y, 0, siz(V)){ printv(V[y]); }
+#define out(x)          cout << ((x) ? "Yes" : "No") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
 #define ninf            INT_MIN
-#define int             long long
+#define int             long long // take care of it when too much computation required
 
 typedef pair<int,int>   pii;
 typedef pair<ll,ll>     pll;
@@ -67,7 +67,7 @@ const int N = 3e5, M = N;
 /* 
 ->Do not forget to check the edge cases. 
 ->Make sure you are submitting the right file.
-->Do not make "easy->complicated".
+->Do not make "easy->complicated", xd... :|.
 */
 
 //-----------------------------------------------------------------------------
@@ -87,15 +87,15 @@ int32_t main() {
     // cout << setprecision(12) << fixed;
     int tc = 1;
     cin >> tc;
-    while(tc--) {
+    for(int i = 0; i < tc; i++) {
         Solve_main();
     }
 
-    cerr<<"[time:"<<1.0*clock()/CLOCKS_PER_SEC<<"s] ";
+    cerr << "[time:" << 1.0*clock()/CLOCKS_PER_SEC << "s] ";
     return 0;
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>MTEMPLATE</tabTrigger>
+    <tabTrigger>MYTEMPLATE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

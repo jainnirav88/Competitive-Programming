@@ -1,0 +1,54 @@
+<snippet>
+    <content><![CDATA[
+template<class T>
+class Fibonacci{
+    /* To make object : Fibonacci<dataType> fib;    */
+    /* Fibonacci sequence : 0 1 1 2 3 5 8 13 ...... */
+    /* F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2 ..... */
+public:
+    vector<vector<T>> multiply(vector<vector<T>> &v1, vector<vector<T>> &v2){
+        vector<vector<T>> res(2, vector<T>(2));
+        for(int i = 0; i < 2; i++){
+            for(int j = 0; j < 2; j++){
+                for(int k = 0; k < 2; k++){
+                    res[i][j] += (v1[i][k] * v2[k][j])%mod;
+                    res[i][j] %= mod;
+                }
+            }
+        }
+        return res;
+    }
+
+    vector<vector<T>> matrixMul(vector<vector<T>> mat, T n){
+        /* TC : O(logn) */
+        vector<vector<T>> res = { {1, 0}, {0, 1} };
+        while(n > 0){
+            if(n & 1) res = multiply(res, mat);
+            mat = multiply(mat, mat);
+            n >>= 1;
+        }
+        return res;
+    }
+
+    T fibonacciNumber(T n){
+        /* TC : O(logn) */
+        /* Using matrix multiplication(Iterative) */
+        if(n == 0){
+            return 0;
+        }
+        else if(n == 1 || n == 2){
+            return 1;
+        }
+
+        vector<vector<T>> mat = { {1, 1}, {1, 0} };
+
+        vector<vector<T>> res = matrixMul(mat, n-2);
+        return (res[0][0] + res[0][1])%mod; 
+    }
+};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>FIBONACCI</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

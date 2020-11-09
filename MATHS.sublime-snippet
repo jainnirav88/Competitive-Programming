@@ -5,6 +5,7 @@ class Math{
     /* To make object : Math<datatype> mth; */
 public:
     T npow(T base, T exp) {
+        /* TC : O(log(exp)) */
         T result = 1;
         while (exp > 0) {
             if (exp & 1) result = (result * base);
@@ -15,6 +16,7 @@ public:
     }
 
     int mpow(int base, int exp) {
+        /* TC : O(log(exp)) */
         base %= mod;
         int result = 1;
         while (exp > 0) {
@@ -28,16 +30,18 @@ public:
 // -----------------------
 
     T fact(T p){
+        /* TC : O(p) */
         T res = 1;
-        for(int i = 1; i<=p; i++){
+        for(int i = 1; i <= p; i++){
             res *= i;
         }
         return res;
     }
 
     T factMod(T p){
+        /* TC : O(p) */
         T res = 1;
-        for(int i = 1; i<=p; i++){
+        for(int i = 1; i <= p; i++){
             res *= i;
             res %= mod;
         }
@@ -49,17 +53,17 @@ public:
     T nCr(T n, T r){
         /* TC: O(n) */
         
-        if(n<r){
+        if(n < r){
             return 0;
         }
 
         T res=1;
         
-        if(r>(n-r)){
+        if(r > (n-r)){
             r = n-r;
         }
 
-        for(int i=0; i<r; i++){
+        for(int i = 0; i < r; i++){
             res *= (n-i);
             res /= (i+1);
         }
@@ -75,20 +79,20 @@ public:
     }
 
     T nCrMod(T n, T r){
-        /* TC: O(n*log(mod)) */
+        /* TC: O(nlog(mod)) */
         
-        if(n>r){
+        if(n < 0 || n < r){
             return 0;
         }
 
         T res = 1;
-        if(r>(n-r)){
+        if(r > (n-r)){
             r = n-r;
         }
 
-        for(int i=0; i<r; i++){
-            res = (res%mod * (n-i)%mod)%mod;
-            res = (res * inv(i+1))%mod;
+        for(int i = 0; i < r; i++){
+            res = (res%mod * (n - i)%mod)%mod;
+            res = (res * inv(i + 1))%mod;
         }
 
         return res;

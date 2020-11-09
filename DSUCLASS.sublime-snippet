@@ -1,0 +1,67 @@
+<snippet>
+    <content><![CDATA[
+class DSU {
+    /* Create with DSU dsu; */
+public:
+    vector<int> sz; // to represent the size of root nodes.
+    vector<int> arr; 
+
+    DSU(int n){
+        for(int i = 0; i < n; i++){
+            arr.emplace_back(i);
+            sz.emplace_back(1); // initially all are root hence size = 1.
+        }
+    }
+
+    int root(int v){
+        while(v != arr[v]){
+            v = arr[v];
+        }
+        return v;
+    }
+
+    bool find(int v, int u){
+        int root_v = root(v);
+        int root_u = root(u);
+        return root_v == root_u;
+    }
+
+    void Union(int v, int u){
+        int root_v = root(v);
+        int root_u = root(u);
+        if(root_v == root_u){
+            return;
+        }
+        if(sz[root_v] > sz[root_u]){
+            arr[root_u] = root_v;
+            sz[root_v] += sz[root_u];
+            sz[root_u] = 0;
+        }
+        else{
+            arr[root_v] = root_u;
+            sz[root_u] += sz[root_v];
+            sz[root_v] = 0;
+        }
+    }
+
+    void printARR(){
+        /* call this for printing the array. */
+        for(auto val : arr){
+            cout << val << ' ';
+        }
+        cout << '\n';
+    }
+
+    void printSIZE(){
+        /* call this for printing the size. size = 0 means it is connected to in some set and size != 0 means it's root. */
+        for(auto val : sz){
+            cout << val << ' ';
+        }
+        cout << '\n';
+    }
+};]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>DSUCLASS</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

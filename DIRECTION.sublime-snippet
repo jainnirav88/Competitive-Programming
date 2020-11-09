@@ -7,7 +7,10 @@
 //         {LU, U, RU, R, RD, D, LD, L}
 // int xa[] = {-1, -1, -1, 0, 1, 1, 1, 0};
 // int ya[] = {-1, 0, 1, 1, 1, 0, -1, -1};
-]]></content>
+
+bool isOk(int x, int y){
+    return x >= 0 && y >= 0 && x < n && y < m;
+}]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>DIRECTION</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

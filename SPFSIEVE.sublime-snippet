@@ -5,7 +5,7 @@ vector<int> spf(spfMax, -1);
 
 void computeSPF()
 {
-    /* TC : O(n)(around) */
+    /* TC : O(nlogn) */
     spf[1] = 1;
     for(int i = 2; i < spfMax; i++){
         if(spf[i] == -1){

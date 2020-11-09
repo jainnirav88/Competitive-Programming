@@ -1,25 +1,25 @@
 <snippet>
     <content><![CDATA[
-#define rep(x,k,n)      for(int x=(k); x<(n); ++x) // 66
-#define repr(x,k,n)     for(int x=(k); x>(n); --x)
+#define rep(x, k, n)    for(int x = (k); x < (n); ++x) // 66 "Baklol"
+#define repr(x, k, n)   for(int x = (k); x > (n); --x)
 #define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
-#define print(x)        cout << x << '\n'
-#define prints(x)       cout << x << " "
+#define print(x)        cout << (x) << '\n'
+#define prints(x)       cout << (x) << " "
 #define eb              emplace_back
 #define mp              make_pair
 #define F               first
 #define S               second
-#define o2(x)           ((x)*(x))
+#define o2(x)           ( (x) * (x) )
 #define all(x)          (x).begin(), (x).end()
 #define allr(x)         (x).rbegin(), (x).rend()
-#define clr(x,k)        memset((x), (k), sizeof((x)))
+#define clr(x,k)        memset(x, k, sizeof(x))
 #define sortall(x)      sort(all(x))
 #define sortalld(x)     sort(all(x), greater<int>())
-#define printv(v)       rep(x, 0, siz(v)){prints(v[x]);}cout<<'\n'
-#define print2dv(V)     rep(y, 0, siz(V)){printv(V[y]);}
-#define out(x)          cout << ((x) ? "YES" : "NO") << '\n';
+#define printv(v)       rep(x, 0, siz(v)){ prints(v[x]); } cout << '\n'
+#define print2dv(V)     rep(y, 0, siz(V)){ printv(V[y]); }
+#define out(x)          cout << ((x) ? "Yes" : "No") << '\n';
 #define PI              3.1415926535897932384626
 #define inf             INT_MAX
 #define ninf            INT_MIN
@@ -60,7 +60,7 @@ const int N = 3e5, M = N;
 
 /* 
 ->Do not forget to check the edge cases.
-->Do not make "easy->complicated".
+->Do not make "easy->complicated", xd... :|.
 */
 
 //-----------------------------------------------------------------------------
