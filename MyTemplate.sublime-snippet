@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 76 87 "Baklol"
+#include<bits/stdc++.h> // 68 79 "Baklol"
 using namespace std;
 
 #define rep(x, k, n)    for(int x = (k); x < (n); ++x)
@@ -23,24 +23,16 @@ using namespace std;
 #define printv(v)       rep(x, 0, siz(v)){ prints(v[x]); } cout << '\n'
 #define print2dv(V)     rep(y, 0, siz(V)){ printv(V[y]); }
 #define out(x)          cout << ((x) ? "Yes" : "No") << '\n';
-#define PI              3.1415926535897932384626
 #define inf             INT_MAX
 #define ninf            INT_MIN
 #define int             long long // take care of it when too much computation required
 
-typedef pair<int,int>   pii;
-typedef pair<ll,ll>     pll;
+typedef pair<int, int>  pii;
 typedef vector<int>     vi;
-typedef vector<ll>      vl;
-typedef vector<char>    vc;
 typedef vector<bool>    vb;
 typedef vector<pii>     vpii;
-typedef vector<pll>     vpll;
 typedef vector<vi>      vvi;
-typedef vector<vl>      vvl;
-typedef vector<vc>      vvc;
 typedef vector<vb>      vvb;
-typedef vector<vpii>    vvpii;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
@@ -61,19 +53,19 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-const int mod = 1e9+7;
+const int mod = 1e9+7; // 998244353
 const int N = 3e5, M = N;
 
 /* 
-->Do not forget to check the edge cases. 
-->Make sure you are submitting the right file.
-->Do not make "easy->complicated", xd... :|.
+-> Do not forget to check the edge cases. 
+-> Do something instead of nothing.
+-> Make sure you are submitting the right file.
+-> Do not make "easy->complicated", xd... :|.
 */
 
 //-----------------------------------------------------------------------------
 
 void Solve_main() {
-    int n, m, k;
 
 
 }

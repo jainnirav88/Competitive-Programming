@@ -1,7 +1,6 @@
 <snippet>
     <content><![CDATA[
-bool isPrime(int n)
-{ 
+bool isPrime(int n){
     /* TC : O(sqrt(n)) */
     // Corner cases
     if (n <= 1){

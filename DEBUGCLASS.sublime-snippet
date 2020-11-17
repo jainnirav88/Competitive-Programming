@@ -15,8 +15,7 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 #define deb(...) cout << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define deb(...)
-#endif
-]]></content>
+#endif]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>DEBUGCLASS</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

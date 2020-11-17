@@ -1,0 +1,87 @@
+<snippet>
+    <content><![CDATA[
+class SegmentTree{
+    /* 1 as a root, create with SegmentTree sgt(arr); */
+    vector<int> segTree;
+public:
+    SegmentTree(vector<int> &arr){
+        int n = (int)arr.size();
+        segTree.resize(4*n);
+        buildSegTree(1, 0, n-1, arr);
+    }
+
+    void buildSegTree(int node, int start, int end, vector<int> &arr){
+        if(start == end){
+            segTree[node] = arr[start];
+        }
+        else{
+            int mid = start + ((end - start)>>1);
+            buildSegTree(2*node, start, mid, arr);
+            buildSegTree(2*node+1, mid+1, end, arr);
+            segTree[node] = min(segTree[2*node], segTree[2*node + 1]);
+        }
+    }
+
+    void printSegTree(){
+        for(auto x : segTree){
+            cout << x << ' ';
+        }
+        cout << '\n';
+    }
+
+    int query(int node, int start, int end, const int &left, const int &right){
+        if(start >= left && end <= right){
+            return segTree[node];
+        }
+        else if(end < left || start > right){
+            return INT_MAX;
+        }
+        else{
+            int mid = (start + end)/2;
+            return min(query(2*node, start, mid, left, right), 
+                        query(2*node + 1, mid + 1, end, left, right));
+        }
+    }
+
+    void valueUpdate(int node , int start, int end,
+                         const int &index, const int &value){
+        if(start == index && end == index){
+            segTree[node] = value; // changing the value of node
+        }
+        else{
+            int mid = start + ((end - start)>>1);
+            if(index <= mid){
+                valueUpdate(2*node, start, mid, index, value);
+            }
+            else{
+                valueUpdate(2*node + 1, mid + 1, end, index, value);
+            }
+            segTree[node] = min(segTree[2*node], segTree[2*node + 1]);
+        }
+    }
+
+    void rangeUpdate(int node, int start, int end,
+                         const int &left, const int &right, const int &value){
+        if(start == end){
+            if(start >= left && start <= right){
+                segTree[node] += value;
+            }
+        }
+        else{
+            int mid = start + ((end - start)>>1);
+            if(left <= mid){ // left part
+                rangeUpdate(2*node, start, mid, left, right, value);
+            }
+            if(right >= mid){ // right part
+                rangeUpdate(2*node + 1, mid + 1, end, left, right, value);
+            }
+            segTree[node] = min(segTree[2*node], segTree[2*node + 1]);
+        }
+    }
+};
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>SEGMENTTREE</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

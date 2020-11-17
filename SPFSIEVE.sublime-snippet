@@ -1,11 +1,11 @@
 <snippet>
     <content><![CDATA[
-const int spfMax = 1e5+1;
+const int spfMax = 1e5 + 5;
 vector<int> spf(spfMax, -1);
 
 void computeSPF()
 {
-    /* TC : O(nlogn) */
+    /* TC : O(nlogn) , "smallest prime factor"*/
     spf[1] = 1;
     for(int i = 2; i < spfMax; i++){
         if(spf[i] == -1){
@@ -16,8 +16,7 @@ void computeSPF()
             }
         }
     }
-}
-]]></content>
+}]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>SPFSIEVE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

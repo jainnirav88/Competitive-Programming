@@ -20,7 +20,7 @@ void sieve()
             }
             
             if (!done){
-                for(int j = i*i; j < num; j += i){
+                for(int j = i * i; j < num; j += i){
                     comp[j] = true;  
                 }
             } 

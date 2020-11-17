@@ -5,19 +5,18 @@ int binary_search(int left, int right){
     int mid;
     while(left <= right){
         mid = left + (right - left)/2;
-        if(){  
-            left = mid + 1; 
+        if(){
+            left = mid + 1;
             // right = mid - 1;
         }
         else{
             right = mid - 1;
-            // left = mid + 1; 
+            // left = mid + 1;
         }
     }
     return left;
     // return right;
-}
-]]></content>
+}]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>BINARYSEARCH</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
