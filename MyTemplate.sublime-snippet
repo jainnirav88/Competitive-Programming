@@ -1,11 +1,11 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 68 79 "Baklol"
+#include<bits/stdc++.h> // 61 72 "Baklol"
 using namespace std;
 
 #define rep(x, k, n)    for(int x = (k); x < (n); ++x)
 #define repr(x, k, n)   for(int x = (k); x > (n); --x)
-#define tr(it,a)        for(auto it = (a).begin(); it != (a).end(); ++it)
+#define tr(it, a)       for(auto it = (a).begin(); it != (a).end(); ++it)
 #define ll              long long
 #define siz(x)          ((int)(x).size())
 #define print(x)        cout << (x) << '\n'
@@ -17,7 +17,7 @@ using namespace std;
 #define o2(x)           ( (x) * (x) )
 #define all(x)          (x).begin(), (x).end()
 #define allr(x)         (x).rbegin(), (x).rend()
-#define clr(x,k)        memset(x, k, sizeof(x))
+#define clr(x, k)       memset(x, k, sizeof(x))
 #define sortall(x)      sort(all(x))
 #define sortalld(x)     sort(all(x), greater<int>())
 #define printv(v)       rep(x, 0, siz(v)){ prints(v[x]); } cout << '\n'
@@ -25,7 +25,7 @@ using namespace std;
 #define out(x)          cout << ((x) ? "Yes" : "No") << '\n';
 #define inf             INT_MAX
 #define ninf            INT_MIN
-#define int             long long // take care of it when too much computation required
+#define int             long long // "be carefull"
 
 typedef pair<int, int>  pii;
 typedef vector<int>     vi;
@@ -53,15 +53,8 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 
 mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
 
-const int mod = 1e9+7; // 998244353
+const int mod = 1e9+7; // 998244353;
 const int N = 3e5, M = N;
-
-/* 
--> Do not forget to check the edge cases. 
--> Do something instead of nothing.
--> Make sure you are submitting the right file.
--> Do not make "easy->complicated", xd... :|.
-*/
 
 //-----------------------------------------------------------------------------
 
@@ -85,7 +78,14 @@ int32_t main() {
 
     cerr << "[time:" << 1.0*clock()/CLOCKS_PER_SEC << "s] ";
     return 0;
-}]]></content>
+}
+
+/*
+-> Do not forget to check the edge cases.
+-> Do something instead of nothing.
+-> Make sure you are submitting the right file.
+-> Do not make "easy->complicated", xd... :|.
+*/]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>MYTEMPLATE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
