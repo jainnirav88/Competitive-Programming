@@ -1,12 +1,12 @@
 <snippet>
     <content><![CDATA[
-//         {U, R, D, L}
-// int xa[] = {-1, 0, 1, 0};
-// int ya[] = {0, 1, 0, -1};
-
-//         {LU, U, RU, R, RD, D, LD, L}
-// int xa[] = {-1, -1, -1, 0, 1, 1, 1, 0};
-// int ya[] = {-1, 0, 1, 1, 1, 0, -1, -1};
+//         {U,  R, D,  L}
+// int dx[] = {-1, 0, 1,  0};
+// int dy[] = { 0, 1, 0, -1};
+  
+//kingmove:{LU, U,  RU,  R, RD,  D, LD,  L}
+// int dx[] = {-1, -1, -1,  0,  1,  1,  1,  0};
+// int dy[] = {-1,  0,  1,  1,  1,  0, -1, -1};
 
 bool isOk(int x, int y){
     return x >= 0 && y >= 0 && x < n && y < m;

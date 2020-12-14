@@ -1,0 +1,22 @@
+<snippet>
+    <content><![CDATA[
+void bfs(int v){
+    queue<int> q;
+    q.push(v);
+    vis[v] = true;
+    while(!q.empty()){
+        int from = q.top();
+        q.pop();
+        for(auto to : g[from]){
+            if(!vis[to]){
+                q.push(to);
+                vis[to] = true;
+            }
+        }
+    }
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>BFSSNIPPET</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

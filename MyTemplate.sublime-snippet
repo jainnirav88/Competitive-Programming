@@ -1,38 +1,36 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 61 72 "Baklol"
+#include<bits/stdc++.h> // 57 68 "Baklol, Take it easy"
 using namespace std;
 
-#define rep(x, k, n)    for(int x = (k); x < (n); ++x)
-#define repr(x, k, n)   for(int x = (k); x > (n); --x)
-#define tr(it, a)       for(auto it = (a).begin(); it != (a).end(); ++it)
-#define ll              long long
-#define siz(x)          ((int)(x).size())
-#define print(x)        cout << (x) << '\n'
-#define prints(x)       cout << (x) << " "
-#define eb              emplace_back
-#define mp              make_pair
-#define F               first
-#define S               second
-#define o2(x)           ( (x) * (x) )
-#define all(x)          (x).begin(), (x).end()
-#define allr(x)         (x).rbegin(), (x).rend()
-#define clr(x, k)       memset(x, k, sizeof(x))
-#define sortall(x)      sort(all(x))
-#define sortalld(x)     sort(all(x), greater<int>())
-#define printv(v)       rep(x, 0, siz(v)){ prints(v[x]); } cout << '\n'
-#define print2dv(V)     rep(y, 0, siz(V)){ printv(V[y]); }
-#define out(x)          cout << ((x) ? "Yes" : "No") << '\n';
-#define inf             INT_MAX
-#define ninf            INT_MIN
-#define int             long long // "be carefull"
+#define rep(x, k, n)        for(int x = (k); x < (n); ++x)
+#define repr(x, k, n)       for(int x = (k); x > (n); --x)
+#define tr(it, a)           for(auto it = (a).begin(); it != (a).end(); ++it)
+#define ll                  long long
+#define siz(x)              ((int)(x).size())
+#define pb                  push_back
+#define mp                  make_pair
+#define F                   first
+#define S                   second
+#define o2(x)               ( (x) * (x) )
+#define all(x)              (x).begin(), (x).end()
+#define clr(x, k)           memset(x, k, sizeof(x)) // 0, -1
+#define sortall(x)          sort(all(x))
+#define sortalld(x)         sort(all(x), greater<int>())
+#define printv(v, x)        rep(i, 0, x) cout << v[i] << " \n"[i+1==x];
+#define print2dv(V, y, x)   rep(j, 0, y) printv(V[j], x);
+#define out(x)              cout << ((x) ? "Yes" : "No") << '\n'
+#define setbits(x)          __builtin_popcountll(x)
+#define inf                 INT_MAX
+#define ninf                INT_MIN
+#define int                 long long // "be carefull"
 
-typedef pair<int, int>  pii;
-typedef vector<int>     vi;
-typedef vector<bool>    vb;
-typedef vector<pii>     vpii;
-typedef vector<vi>      vvi;
-typedef vector<vb>      vvb;
+typedef pair<int, int>      pii;
+typedef vector<int>         vi;
+typedef vector<bool>        vb;
+typedef vector<pii>         vpii;
+typedef vector<vi>          vvi;
+typedef vector<vb>          vvb;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
@@ -51,10 +49,8 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 #define deb(...)
 #endif
 
-mt19937_64 rang(chrono::high_resolution_clock::now().time_since_epoch().count());
-
-const int mod = 1e9+7; // 998244353;
-const int N = 3e5, M = N;
+const int mod = 1e9 + 7; // 998244353;
+const int N = 3e5 + 5, M = N;
 
 //-----------------------------------------------------------------------------
 
@@ -81,10 +77,16 @@ int32_t main() {
 }
 
 /*
--> Do not forget to check the edge cases.
--> Do something instead of nothing.
--> Make sure you are submitting the right file.
--> Do not make "easy->complicated", xd... :|.
+-> edge cases.
+-> Submit - right file.
+-> Move on - if completely_stuck > 30 minute.
+-> entire input - multiple testcases.
+-> time complexity - 1 sec : 4e8 will work but risky.
+-> space complexity - 256 mb : 6e7(int), 3e7(ll), 2e8(bool, char),  will work.
+-> mod.
+-> builtin fuction - add ll.
+-> Iterative > Recursive.
+-> clear - global variables.
 */]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>MYTEMPLATE</tabTrigger>

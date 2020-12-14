@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
 class DSU {
-    /* Create with DSU dsu; */
+    /* Create with DSU dsu(size); */
 public:
     vector<int> sz; // to represent the size of root nodes.
     vector<int> arr;
