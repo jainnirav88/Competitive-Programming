@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 57 68 "Baklol, Take it easy"
+#include<bits/stdc++.h> // 59 70 "Baklol, Take it easy"
 using namespace std;
 
 #define rep(x, k, n)        for(int x = (k); x < (n); ++x)
@@ -50,9 +50,11 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 #endif
 
 const int mod = 1e9 + 7; // 998244353;
-const int N = 3e5 + 5, M = N;
+const int N = 3e5 + 5, M = 2e5 + 5;
 
 //-----------------------------------------------------------------------------
+
+
 
 void Solve_main() {
 
