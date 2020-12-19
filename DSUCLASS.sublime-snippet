@@ -5,11 +5,13 @@ class DSU {
 public:
     vector<int> sz; // to represent the size of root nodes.
     vector<int> arr;
+    int components;
 
     DSU(int n){
+        components = n;
         for(int i = 0; i < n; i++){
-            arr.emplace_back(i);
-            sz.emplace_back(1); // initially all are root hence size = 1.
+            arr.push_back(i);
+            sz.push_back(1); // initially all are root hence size = 1.
         }
     }
 
@@ -21,27 +23,23 @@ public:
     }
 
     bool find(int v, int u){
-        int root_v = root(v);
-        int root_u = root(u);
-        return root_v == root_u;
+        return root(v) == root(u);
     }
 
-    void Union(int v, int u){
+    bool Union(int v, int u){
         int root_v = root(v);
         int root_u = root(u);
         if(root_v == root_u){
-            return;
+            return false;
         }
-        if(sz[root_v] > sz[root_u]){
-            arr[root_u] = root_v;
-            sz[root_v] += sz[root_u];
-            sz[root_u] = 0;
+        if(sz[root_v] < sz[root_u]){
+             swap(root_v, root_u);   
         }
-        else{
-            arr[root_v] = root_u;
-            sz[root_u] += sz[root_v];
-            sz[root_v] = 0;
-        }
+        arr[root_u] = root_v;
+        sz[root_v] += sz[root_u];
+        sz[root_u] = 0;
+        components--;
+        return true;
     }
 
     void printARR(){

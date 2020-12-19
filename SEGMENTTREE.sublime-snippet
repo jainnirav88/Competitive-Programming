@@ -52,7 +52,7 @@ public :
     void valueUpdate(int node, int start, int end,
                          const int &index, const int &value){
         if(start == index && end == index){
-            segTree[node] = value; // changing the value of node
+            segTree[node] = join(segTree[node], value); // changing the value of node
         }
         else{
             int mid = start + ((end - start) >> 1);
@@ -70,7 +70,7 @@ public :
                          const int &left, const int &right, const int &value){
         if(start == end){
             if(start >= left && start <= right){
-                segTree[node] += value;
+                segTree[node] = join(segTree[node], value);
             }
         }
         else{

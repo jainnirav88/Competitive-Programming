@@ -12,7 +12,8 @@ void dijkstra(int v){
     while(!pq.empty()){
         auto [W, from] = pq.top();
         pq.pop();
-        if(dist[from] < W) continue;
+        if(vis[from]) continue;
+        vis[from] = true;
         for(auto [to, weight] : g[from]){
             if(dist[to] > dist[from] + weight){
                 dist[to] = dist[from] + weight;

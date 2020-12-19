@@ -1,8 +1,17 @@
 <snippet>
     <content><![CDATA[
-int mpow(int base, int exp) {
-    /* O(logn) */
-    base %= mod;
+int MINT(long long x){
+    while(x < 0){
+        x += mod;
+    }
+    while(x >= mod){
+        x -= mod;
+    }
+    return x;
+}
+
+int MPOW(int base, int exp) {
+    base = MINT(base);
     int result = 1;
     while (exp > 0) {
         if (exp & 1) result = ((long long)result * base) % mod;
@@ -12,20 +21,13 @@ int mpow(int base, int exp) {
     return result;
 }
 
-long long addMod(long long a, long long b){
-    long long res = a + b;
-    while(res < 0){
-        res += mod;
-    }
-    while(res >= mod){
-        res -= mod;
-    }
-    return res;
+int MADD(long long a, long long b){
+    return MINT(MINT(a) + MINT(b));
 }
 
-long long mulMod(long long a, long long b){ return (a * b)%mod; }
+int MMUL(long long a, long long b){return (MINT(a) * MINT(b))%mod;}
 
-long long divMod(long long a, long long b){ return mulMod(a, mpow(b, mod-2)); }]]></content>
+int MDIV(long long a, long long b){return MMUL(MINT(a), MPOW(MINT(b), mod-2));}]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>MODOPERATIONS</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

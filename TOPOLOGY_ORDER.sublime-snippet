@@ -18,7 +18,7 @@ void topologyOrder(){
     topo.clear();
     clr(vis, false);
     for(int i = 0; i < n; i++){
-        if(indeg[i] == 0){
+        if(!vis[i]){
             topology(i);
         }
     }

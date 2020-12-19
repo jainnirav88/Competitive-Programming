@@ -1,20 +1,20 @@
 <snippet>
     <content><![CDATA[
-vector<int> factors;
+vector<int> divisors;
 
-void getfactors(int n){
-    /* TC : O(sqrt(n)) , factors not in a sorted order*/
-    factors.clear();
+void getDivisors(int n){
+    /* TC : O(sqrt(n)) , divisors not in a sorted order*/
+    divisors.clear();
     for(int i = 1; i * i <= n; i++){
         if(n % i == 0){
-            factors.emplace_back(i);
+            divisors.push_back(i);
             if(n/i == i) continue;
-            factors.emplace_back(n/i);
+            divisors.push_back(n/i);
         }
     }
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>FACTORIZE</tabTrigger>
+    <tabTrigger>DIVISORS</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>
