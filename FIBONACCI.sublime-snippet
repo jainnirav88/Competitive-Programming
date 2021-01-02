@@ -2,7 +2,7 @@
     <content><![CDATA[
 template<class T>
 class Fibonacci{
-    /* To make object : Fibonacci<dataType> fib;    */
+    // copy : Fibonacci<dataType> fib;
     /* Fibonacci sequence : 0 1 1 2 3 5 8 13 ...... */
     /* F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2 ..... */
 public:
@@ -31,17 +31,10 @@ public:
     }
 
     T fibonacciNumber(T n){
-        /* TC : O(logn) */
-        /* Using matrix multiplication(Iterative) */
-        if(n == 0){
-            return 0;
-        }
-        else if(n == 1 || n == 2){
-            return 1;
-        }
-
+        /* TC : O(logn), matrix multiplication(Iterative) */
+        if(n == 0) return 0;
+        else if(n == 1 || n == 2) return 1;
         vector<vector<T>> mat = { {1, 1}, {1, 0} };
-
         vector<vector<T>> res = matrixMul(mat, n-2);
         return (res[0][0] + res[0][1])%mod; 
     }

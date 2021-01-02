@@ -5,7 +5,7 @@ class SegmentTree{
        node = 1, start = 0, end = n - 1 */
 public :
     vector<int> segTree;
-    int base = INT_MAX; // change it accordingly for out of range.
+    int base = INT_MAX; // out of range.
 
     SegmentTree(){
         segTree.resize(4 * n);
@@ -29,21 +29,15 @@ public :
     }
 
     void printSegTree(){
-        for(auto x : segTree){
-            cout << x << ' ';
-        }
+        for(auto x : segTree) cout << x << ' ';
         cout << '\n';
     }
 
     int query(int node, int start, int end, const int &left, const int &right){
-        if(start >= left && end <= right){
-            return segTree[node];
-        }
-        else if(end < left || start > right){
-            return base;
-        }
+        if(start >= left && end <= right) return segTree[node];
+        else if(end < left || start > right) return base;
         else{
-            int mid = (start + end)/2;
+            int mid = start + ((end - start)>>1);
             return join(query(2*node, start, mid, left, right), 
                         query(2*node + 1, mid + 1, end, left, right));
         }
@@ -52,16 +46,12 @@ public :
     void valueUpdate(int node, int start, int end,
                          const int &index, const int &value){
         if(start == index && end == index){
-            segTree[node] = join(segTree[node], value); // changing the value of node
+            segTree[node] = join(segTree[node], value); // change value
         }
         else{
-            int mid = start + ((end - start) >> 1);
-            if(index <= mid){
-                valueUpdate(2*node, start, mid, index, value);
-            }
-            else{
-                valueUpdate(2*node + 1, mid + 1, end, index, value);
-            }
+            int mid = start + ((end - start)>>1);
+            if(index <= mid) valueUpdate(2*node, start, mid, index, value);
+            else valueUpdate(2*node + 1, mid + 1, end, index, value);
             segTree[node] = join(segTree[2*node], segTree[2*node + 1]);
         }
     }
@@ -74,7 +64,7 @@ public :
             }
         }
         else{
-            int mid = start + ((end - start) >> 1);
+            int mid = start + ((end - start)>>1);
             if(left <= mid){ // left part
                 rangeUpdate(2*node, start, mid, left, right, value);
             }

@@ -1,35 +1,38 @@
 <snippet>
     <content><![CDATA[
-int MINT(long long x){
-    while(x < 0){
-        x += mod;
+template<class T>
+class MODULAR {
+public :
+    // create using : MODULAR<int> md;
+    const int mod = 1e9 + 7; // 998244353;
+
+    int MINT(T x){
+        while(x < 0){ x += mod; }
+        while(x >= mod){ x -= mod; }
+        return x;
     }
-    while(x >= mod){
-        x -= mod;
+
+    int MPOW(int base, int exp) {
+        base = MINT(base);
+        int result = 1;
+        while (exp > 0) {
+            if (exp & 1) result = ((long long)result * base) % mod;
+            base = ((long long)base * base) % mod;
+            exp >>= 1;
+        }
+        return result;
     }
-    return x;
-}
 
-int MPOW(int base, int exp) {
-    base = MINT(base);
-    int result = 1;
-    while (exp > 0) {
-        if (exp & 1) result = ((long long)result * base) % mod;
-        base = ((long long)base * base) % mod;
-        exp >>= 1;
-    }
-    return result;
-}
+    int MADD(T a, T b){ return MINT(MINT(a) + MINT(b)); }
 
-int MADD(long long a, long long b){
-    return MINT(MINT(a) + MINT(b));
-}
+    int MSUB(T a, T b){ return MINT(MINT(a) - MINT(b)); }
 
-int MMUL(long long a, long long b){return (MINT(a) * MINT(b))%mod;}
+    int MMUL(T a, T b){ return MINT(((long long)MINT(a) * MINT(b))%mod); }
 
-int MDIV(long long a, long long b){return MMUL(MINT(a), MPOW(MINT(b), mod-2));}]]></content>
+    int MDIV(T a, T b){ return MMUL(MINT(a), MPOW(MINT(b), mod - 2)); }
+};]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>MODOPERATIONS</tabTrigger>
+    <tabTrigger>MODULAROPERATION</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

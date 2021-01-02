@@ -1,40 +1,31 @@
 <snippet>
     <content><![CDATA[
 class DSU {
-    /* Create with DSU dsu(size); */
+    // Copy : DSU dsu(n);
 public:
-    vector<int> sz; // to represent the size of root nodes.
-    vector<int> arr;
+    vector<int> arr, sz; // size of roots.
     int components;
 
-    DSU(int n){
+    DSU(int n){ // n = size
         components = n;
         for(int i = 0; i < n; i++){
             arr.push_back(i);
-            sz.push_back(1); // initially all are root hence size = 1.
+            sz.push_back(1); // Initially all are root -> size = 1.
         }
     }
 
     int root(int v){
-        while(v != arr[v]){
-            v = arr[v];
-        }
+        while(v != arr[v]) v = arr[v];
         return v;
     }
 
-    bool find(int v, int u){
-        return root(v) == root(u);
-    }
+    bool find(int v, int u) return root(v) == root(u);
 
     bool Union(int v, int u){
         int root_v = root(v);
         int root_u = root(u);
-        if(root_v == root_u){
-            return false;
-        }
-        if(sz[root_v] < sz[root_u]){
-             swap(root_v, root_u);   
-        }
+        if(root_v == root_u) return false;
+        if(sz[root_v] < sz[root_u]) swap(root_v, root_u);
         arr[root_u] = root_v;
         sz[root_v] += sz[root_u];
         sz[root_u] = 0;
@@ -43,18 +34,14 @@ public:
     }
 
     void printARR(){
-        /* call this for printing the array. */
-        for(auto val : arr){
-            cout << val << ' ';
-        }
+        /* to print the array. */
+        for(auto val : arr) cout << val << ' ';
         cout << '\n';
     }
 
     void printSIZE(){
-        /* call this for printing the size. size = 0 means it is connected to in some set and size != 0 means it's root. */
-        for(auto val : sz){
-            cout << val << ' ';
-        }
+        /* to print the size. size = 0 -> it's connected in some set, size != 0 -> it's root. */
+        for(auto val : sz) cout << val << ' ';
         cout << '\n';
     }
 };]]></content>

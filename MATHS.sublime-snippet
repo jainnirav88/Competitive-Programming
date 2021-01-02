@@ -2,7 +2,7 @@
     <content><![CDATA[
 template<class T>
 class Math{
-    /* To make object : Math<datatype> mth; */
+    // copy : Math<datatype> mth; 
 public:
     T npow(T base, T exp) {
         /* TC : O(log(exp)) */
@@ -52,49 +52,30 @@ public:
 
     T nCr(T n, T r){
         /* TC: O(n) */
-        
-        if(n < r){
-            return 0;
-        }
-
+        if(n < r) return 0;
         T res = 1;
-        
-        if(r > (n-r)){
-            r = n-r;
-        }
-
+        if(r > (n-r)) r = n-r;
         for(int i = 0; i < r; i++){
             res *= (n-i);
             res /= (i+1);
         }
-
         return res;
     }
 
     T inv(T a){
         /* TC: O(log(mod)) */
-
-        T res = mpow(a, mod-2);
-        return res;
+        return mpow(a, mod-2);
     }
 
     T nCrMod(T n, T r){
         /* TC: O(nlog(mod)) */
-        
-        if(n < 0 || n < r){
-            return 0;
-        }
-
+        if(n < 0 || n < r) return 0;
         T res = 1;
-        if(r > (n-r)){
-            r = n-r;
-        }
-
+        if(r > (n-r)) r = n-r;
         for(int i = 0; i < r; i++){
             res = (res%mod * (n - i)%mod)%mod;
             res = (res * inv(i + 1))%mod;
         }
-
         return res;
     }
 
@@ -102,32 +83,22 @@ public:
 
     T nPr(T n, T r){
         /* TC : O(n) */
-        if(n < r){
-            return 0;
-        }
-
+        if(n < r) return 0;
         T res = 1;
-
         for(int i = 0; i < r; i++){
             res *= (n - i);
         }
-
         return res;
     }
 
     T nPrMod(T n, T r){
         /* TC : O(n) */
-        if(n < r){
-            return 0;
-        }
-
+        if(n < r) return 0;
         T res = 1;
-
         for(int i = 0; i < r; i++){
             res *= (n - i);
             res %= mod;
         }
-
         return res;
     }
 };]]></content>

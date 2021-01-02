@@ -1,26 +1,27 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 59 70 "Baklol, Take it easy"
+#include<bits/stdc++.h> // 55 70 "Baklol, Take it easy"
 using namespace std;
+using ll = long long int;
+using ld = long double;
 
 #define rep(x, k, n)        for(int x = (k); x < (n); ++x)
 #define repr(x, k, n)       for(int x = (k); x > (n); --x)
 #define tr(it, a)           for(auto it = (a).begin(); it != (a).end(); ++it)
-#define ll                  long long
 #define siz(x)              ((int)(x).size())
 #define pb                  push_back
 #define mp                  make_pair
 #define F                   first
 #define S                   second
-#define o2(x)               ( (x) * (x) )
+#define o2(x)               ((x) * (x))
 #define all(x)              (x).begin(), (x).end()
 #define clr(x, k)           memset(x, k, sizeof(x)) // 0, -1
-#define sortall(x)          sort(all(x))
-#define sortalld(x)         sort(all(x), greater<int>())
+#define inputv(v, x, y)     rep(i, x, y) cin >> v[i];
 #define printv(v, x)        rep(i, 0, x) cout << v[i] << " \n"[i+1==x];
 #define print2dv(V, y, x)   rep(j, 0, y) printv(V[j], x);
 #define out(x)              cout << ((x) ? "Yes" : "No") << '\n'
 #define setbits(x)          __builtin_popcountll(x)
+#define line                rep(i, 0, 50){ cout << '-'; } cout << '\n'
 #define inf                 INT_MAX
 #define ninf                INT_MIN
 #define int                 long long // "be carefull"
@@ -34,15 +35,14 @@ typedef vector<vb>          vvb;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
-    cout << name << " = " << arg1  << " ]" << '\n';
+    cout << name << " = " << arg1  << " ]" << "\n";
 }
 template <typename Arg1, typename... Args>
 void debug_out(const char* names, Arg1&& arg1, Args&&... args){
     const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 <<",";
+    cout.write(names, comma - names) << " = " << arg1 << ",";
     debug_out(comma+1, args...);
 }
-
 #ifndef ONLINE_JUDGE
 #define deb(...) cout << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
 #else
@@ -52,7 +52,7 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 const int mod = 1e9 + 7; // 998244353;
 const int N = 3e5 + 5, M = 2e5 + 5;
 
-//-----------------------------------------------------------------------------
+/*/------------------------------ CODE BEGINS ------------------------------/*/
 
 
 
@@ -61,7 +61,7 @@ void Solve_main() {
 
 }
 
-//-----------------------------------------------------------------------------
+/*/------------------------------- CODE ENDS -------------------------------/*/
 
 int32_t main() {
     ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -79,13 +79,13 @@ int32_t main() {
 }
 
 /*
--> edge cases.
+-> edge cases, n = 1 ?
 -> Submit - right file.
 -> Move on - if completely_stuck > 30 minute.
 -> entire input - multiple testcases.
 -> time complexity - 1 sec : 4e8 will work but risky.
--> space complexity - 256 mb : 6e7(int), 3e7(ll), 2e8(bool, char),  will work.
--> mod.
+-> space complexity - 256 mb : 6e7(int), 3e7(ll), 2e8(bool, char), will work.
+-> mod : sort ?, mint.
 -> builtin fuction - add ll.
 -> Iterative > Recursive.
 -> clear - global variables.

@@ -5,7 +5,7 @@ int binary_search(int left, int right){
     int mid;
     while(left <= right){
         mid = left + (right - left)/2;
-        if(){
+        if(check(mid)){
             left = mid + 1;
             // right = mid - 1;
         }

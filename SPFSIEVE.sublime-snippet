@@ -10,9 +10,7 @@ void computeSPF()
     for(int i = 2; i < spfMax; i++){
         if(spf[i] == -1){
             for(int j = i; j < spfMax; j += i){
-                if(spf[j] == -1){
-                    spf[j] = i;
-                }
+                if(spf[j] == -1) spf[j] = i;
             }
         }
     }

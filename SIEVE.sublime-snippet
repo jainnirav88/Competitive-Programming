@@ -8,22 +8,14 @@ void sieve()
 {
     memset(comp, false, sizeof(comp));
     primes.clear();
-    
+
     bool done = false;
     for(int i = 2; i < num; i++){
         if(!comp[i])
         {
             primes.push_back(i);
-            
-            if ((i * i) > num) {
-                done = true;
-            }
-            
-            if (!done){
-                for(int j = i * i; j < num; j += i){
-                    comp[j] = true;  
-                }
-            } 
+            if ((i * i) > num) done = true;
+            if (!done) for(int j = i * i; j < num; j += i) comp[j] = true;
         }
     }
 }]]></content>

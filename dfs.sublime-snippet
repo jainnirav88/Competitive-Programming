@@ -1,10 +1,9 @@
 <snippet>
     <content><![CDATA[
-void dfs(int v, int par){
+void dfs(int v){
+    vis[v] = true;
     for(auto u : g[v]){
-        if(u != par){
-            dfs(u, v);
-        }
+        if(!vis[u]) dfs(u);
     }
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

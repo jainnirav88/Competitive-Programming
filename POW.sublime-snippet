@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
 template<class T>
-T npow(T base, T exp) {
+T npow(T base, T exp){
     /* O(logn) */
     T result = 1;
     while (exp > 0) {
@@ -12,7 +12,7 @@ T npow(T base, T exp) {
     return result;
 }
 
-int mpow(int base, int exp) {
+int mpow(int base, int exp){
     /* O(logn) */
     base %= mod;
     int result = 1;

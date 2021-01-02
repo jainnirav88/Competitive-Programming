@@ -1,5 +1,3 @@
-// 16777216(1e5), 677777216(1e7)
-
 {
     "cmd": ["g++.exe","-std=c++17", "-Wl,--stack,677777216",  "${file}", "-o", "${file_base_name}.exe", "&&" , "${file_base_name}.exe<input.txt>output.txt"],
     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
@@ -7,3 +5,5 @@
     "working_dir":"$file_path",
     "selector":"source.cpp"
 }
+
+// 16777216(1e5), 677777216(1e7)
