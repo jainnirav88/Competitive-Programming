@@ -1,11 +1,6 @@
 <snippet>
     <content><![CDATA[
-vvi v(n, vi(m));
-rep(i, 0, n){
-    rep(j, 0, m){
-        cin >> v[i][j];
-    }
-}
+rep(i, 0, n) rep(j, 0, m) cin >> v[i][j];
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>2DREPIN</tabTrigger>

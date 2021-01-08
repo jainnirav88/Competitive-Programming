@@ -5,8 +5,8 @@ using namespace std;
 using ll = long long int;
 using ld = long double;
 
-#define rep(x, k, n)        for(int x = (k); x < (n); ++x)
-#define repr(x, k, n)       for(int x = (k); x > (n); --x)
+#define rep(x, k, n)        for(int x = (k); x <= (n); ++x)
+#define repr(x, k, n)       for(int x = (k); x >= (n); --x)
 #define tr(it, a)           for(auto it = (a).begin(); it != (a).end(); ++it)
 #define siz(x)              ((int)(x).size())
 #define pb                  push_back
@@ -17,11 +17,11 @@ using ld = long double;
 #define all(x)              (x).begin(), (x).end()
 #define clr(x, k)           memset(x, k, sizeof(x)) // 0, -1
 #define inputv(v, x, y)     rep(i, x, y) cin >> v[i];
-#define printv(v, x)        rep(i, 0, x) cout << v[i] << " \n"[i+1==x];
-#define print2dv(V, y, x)   rep(j, 0, y) printv(V[j], x);
+#define printv(v, k, n)     rep(i, k, n) cout << v[i] << " \n"[i+1==x];
+#define print2dv(V,k,n,m)   rep(j, k, n) printv(V[j], k, m);
 #define out(x)              cout << ((x) ? "Yes" : "No") << '\n'
 #define setbits(x)          __builtin_popcountll(x)
-#define line                rep(i, 0, 50){ cout << '-'; } cout << '\n'
+#define line                rep(i, 0, 50){ cerr << '-'; } cout << '\n'
 #define inf                 INT_MAX
 #define ninf                INT_MIN
 #define int                 long long // "be carefull"
@@ -35,16 +35,16 @@ typedef vector<vb>          vvb;
 
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
-    cout << name << " = " << arg1  << " ]" << "\n";
+    cerr << name << " = " << arg1  << " ]" << "\n";
 }
 template <typename Arg1, typename... Args>
 void debug_out(const char* names, Arg1&& arg1, Args&&... args){
     const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 << ",";
+    cerr.write(names, comma - names) << " = " << arg1 << ",";
     debug_out(comma+1, args...);
 }
 #ifndef ONLINE_JUDGE
-#define deb(...) cout << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
+#define deb(...) cerr << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define deb(...)
 #endif
