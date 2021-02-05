@@ -1,30 +1,27 @@
 <snippet>
     <content><![CDATA[
 class SegmentTree{
-    /* 1 as a root, create with SegmentTree sgt; 
-       node = 1, start = 0, end = n - 1 */
+    /* 1 as a root, create with SegmentTree sgt;
+       node = 1, start = 1/0, end = n/n-1 */
 public :
     vector<int> segTree;
     int base = INT_MAX; // out of range.
 
     SegmentTree(){
         segTree.resize(4 * n);
-        buildSegTree(1, 0, n-1);
+        buildSegTree(1, 1, n);
     }
 
-    int join(int a, int b){
-        return min(a, b);
-    }
+    int join(int a, int b){ return min(a, b); }
 
     void buildSegTree(int node, int start, int end){
-        if(start == end){
+        if(start == end)
             segTree[node] = v[start];
-        }
         else{
             int mid = start + ((end - start)>>1);
             buildSegTree(2*node, start, mid);
             buildSegTree(2*node+1, mid+1, end);
-            segTree[node] = join(segTree[2*node], segTree[2*node + 1]);
+            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
         }
     }
 
@@ -39,39 +36,34 @@ public :
         else{
             int mid = start + ((end - start)>>1);
             return join(query(2*node, start, mid, left, right), 
-                        query(2*node + 1, mid + 1, end, left, right));
+                        query(2*node+1, mid+1, end, left, right));
         }
     }
 
     void valueUpdate(int node, int start, int end,
                          const int &index, const int &value){
-        if(start == index && end == index){
+        if(start == index && end == index)
             segTree[node] = join(segTree[node], value); // change value
-        }
         else{
             int mid = start + ((end - start)>>1);
             if(index <= mid) valueUpdate(2*node, start, mid, index, value);
-            else valueUpdate(2*node + 1, mid + 1, end, index, value);
-            segTree[node] = join(segTree[2*node], segTree[2*node + 1]);
+            else valueUpdate(2*node+1, mid+1, end, index, value);
+            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
         }
     }
 
     void rangeUpdate(int node, int start, int end,
                          const int &left, const int &right, const int &value){
-        if(start == end){
-            if(start >= left && start <= right){
+        if(start == end)
+            if(start >= left && start <= right)
                 segTree[node] = join(segTree[node], value);
-            }
-        }
         else{
             int mid = start + ((end - start)>>1);
-            if(left <= mid){ // left part
+            if(left <= mid) // left part
                 rangeUpdate(2*node, start, mid, left, right, value);
-            }
-            if(right >= mid){ // right part
-                rangeUpdate(2*node + 1, mid + 1, end, left, right, value);
-            }
-            segTree[node] = join(segTree[2*node], segTree[2*node + 1]);
+            if(right >= mid) // right part
+                rangeUpdate(2*node+1, mid+1, end, left, right, value);
+            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
         }
     }
 };]]></content>
