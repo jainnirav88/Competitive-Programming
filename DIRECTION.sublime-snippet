@@ -15,4 +15,5 @@ bool isOk(int x, int y){
     <tabTrigger>DIRECTION</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- L : Left, R : Right, U : Up/Upper, D : Down -->
 </snippet>

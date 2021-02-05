@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+template<class T>
+T npow(T base, T exp){
+    /* O(logn) */
+    T result = 1;
+    while (exp > 0) {
+        if (exp & 1) result = (result * base);
+        base = (base * base);
+        exp >>= 1;
+    }
+    return result;
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>POW</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

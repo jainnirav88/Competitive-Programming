@@ -2,17 +2,17 @@
     <content><![CDATA[
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
-    cout << name << " = " << arg1  << " ]" << '\n';
+    cerr << name << " = " << arg1  << " ]" << '\n';
 }
 template <typename Arg1, typename... Args>
 void debug_out(const char* names, Arg1&& arg1, Args&&... args){
     const char* comma = strchr(names + 1, ',');
-    cout.write(names, comma - names) << " = " << arg1 <<",";
+    cerr.write(names, comma - names) << " = " << arg1 <<",";
     debug_out(comma+1, args...);
 }
 
 #ifndef ONLINE_JUDGE
-#define deb(...) cout << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
+#define deb(...) cerr << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
 #else
 #define deb(...)
 #endif]]></content>

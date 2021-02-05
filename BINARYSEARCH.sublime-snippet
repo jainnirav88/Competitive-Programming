@@ -14,11 +14,12 @@ int binary_search(int left, int right){
             // left = mid + 1;
         }
     }
-    return left;
-    // return right;
+    return right;
+    // return left;
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>BINARYSEARCH</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- check doc for more details. -->
 </snippet>

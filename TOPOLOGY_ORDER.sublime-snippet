@@ -13,14 +13,15 @@ void dfs(int v){
 
 void topological_sort(){
     /* TC: O(n) */
-    clr(vis, false), topo.clear();
+    clr(vis, false);
+    topo.clear();
     for(int i = 0; i < n; i++){
         if(!vis[i]) dfs(i);
     }
     reverse(topo.begin(), topo.end());
 }]]></content>
-    Discription : Check cp algorithm for the neat understanding.
     <tabTrigger>TOPOSORT</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- Check "cpalgorithm"/doc for the neat understanding. -->
 </snippet>

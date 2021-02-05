@@ -14,8 +14,12 @@ void sieve()
         if(!comp[i])
         {
             primes.push_back(i);
+
             if ((i * i) > num) done = true;
-            if (!done) for(int j = i * i; j < num; j += i) comp[j] = true;
+
+            if (!done){
+                for(int j = i * i; j < num; j += i) comp[j] = true;
+            }
         }
     }
 }]]></content>
@@ -23,4 +27,5 @@ void sieve()
     <tabTrigger>SIEVE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- Check doc for details. -->
 </snippet>

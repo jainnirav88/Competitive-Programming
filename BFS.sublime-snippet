@@ -7,7 +7,7 @@ void bfs(int v){
     while(!q.empty()){
         int from = q.top();
         q.pop();
-        for(auto to : g[from]){
+        for(auto &to : g[from]){
             if(!vis[to]){
                 q.push(to);
                 vis[to] = true;

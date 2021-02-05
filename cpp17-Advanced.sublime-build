@@ -1,9 +1,9 @@
 {
-    "cmd": ["g++.exe","-std=c++17", "-Wshadow", "-Wall", "${file}", "-o", "${file_base_name}.exe", "&&" , "${file_base_name}.exe<input.txt>output.txt", "-g", "-fsanitize=address", "-fsanitize=undefined", "-D_GLIBCXX_DEBUG"],
+    "cmd": ["g++.exe", "-std=c++17", "-Wshadow", "-Wall", "${file}", "-o", "${file_base_name}.exe", "&&", "${file_base_name}.exe<input.txt>output.txt", "-g", "-fsanitize=address", "-fsanitize=undefined", "-D_GLIBCXX_DEBUG"],
     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
-    "shell":true,
-    "working_dir":"$file_path",
-    "selector":"source.cpp"
+    "shell": true,
+    "working_dir": "$file_path",
+    "selector": "source.cpp"
 }
 
 /* taken from codeforces... */

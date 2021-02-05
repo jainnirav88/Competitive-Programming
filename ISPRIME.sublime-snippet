@@ -20,4 +20,5 @@ bool isPrime(int n){
     <tabTrigger>ISPRIME</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- Check doc for details. -->
 </snippet>

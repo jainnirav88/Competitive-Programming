@@ -3,7 +3,7 @@
 vector<pair<int, int>> pfact; // (prime_factor, count)
 
 void prime_factor(int n){
-    // TC : O(sqrt(n)), copy: prime_factor(num)
+    /* TC : O(sqrt(n)) */
     pfact.clear();
     int cnt = 0;
     while(n % 2 == 0){
@@ -26,4 +26,5 @@ void prime_factor(int n){
     <tabTrigger>PRIMEFACTORIZE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- Check doc for details. -->
 </snippet>

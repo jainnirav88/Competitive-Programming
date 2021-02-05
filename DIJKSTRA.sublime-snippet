@@ -1,20 +1,18 @@
 <snippet>
     <content><![CDATA[
 void dijkstra(int v){
-    for(int i = 0; i < n; i++){
-        dist[i] = inf;
-    }
+    for(int i = 0; i < n; i++) dist[i] = inf;
 
     priority_queue<pii, vector<pii>, greater<pii>> pq; // weight, node
     dist[v] = 0;
     pq.push({dist[v], v});
 
     while(!pq.empty()){
-        auto [W, from] = pq.top();
+        auto &[W, from] = pq.top();
         pq.pop();
         if(vis[from]) continue;
         vis[from] = true;
-        for(auto [to, weight] : g[from]){
+        for(auto &[to, weight] : g[from]){
             if(dist[to] > dist[from] + weight){
                 dist[to] = dist[from] + weight;
                 pq.push({dist[to], to});
@@ -26,4 +24,5 @@ void dijkstra(int v){
     <tabTrigger>DIJKSTRA</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
+    <!-- Check doc for the details. -->
 </snippet>
