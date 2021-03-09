@@ -1,11 +1,12 @@
 <snippet>
     <content><![CDATA[
 const int spfMax = 1e5 + 5;
-vector<int> spf(spfMax, -1);
+int spf[spfMax];
 
 void computeSPF()
 {
     /* TC : O(nlogn), "smallest prime factor"*/
+    clr(spf, -1);
     spf[1] = 1;
     for(int i = 2; i < spfMax; i++){
         if(spf[i] == -1){

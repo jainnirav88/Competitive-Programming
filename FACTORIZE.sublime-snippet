@@ -7,9 +7,9 @@ void getfactors(int n){
     factors.clear();
     for(int i = 1; i * i <= n; i++){
         if(n % i == 0){
-            factors.emplace_back(i);
+            factors.push_back(i);
             if(n/i == i) continue;
-            factors.emplace_back(n/i);
+            factors.push_back(n/i);
         }
     }
 }]]></content>

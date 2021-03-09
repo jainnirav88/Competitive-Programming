@@ -8,7 +8,7 @@ public:
 
     DSU(int n){ // n = size
         components = n;
-        for(int i = 0; i < n; i++){
+        for(int i = 0; i <= n; i++){
             arr.push_back(i);
             sz.push_back(1); // Initially all are root -> size = 1.
         }
@@ -19,7 +19,9 @@ public:
         return v;
     }
 
-    bool find(int v, int u) return root(v) == root(u);
+    bool find(int v, int u){
+        return root(v) == root(u);
+    }
 
     bool Union(int v, int u){
         int root_v = root(v);
@@ -38,14 +40,16 @@ public:
 
     void printARR(){
         /* to print the array. */
-        for(auto val : arr) cout << val << ' ';
-        cout << '\n';
+        for(int i = 1; i <= n; i++){
+            cout << arr[i] << " \n"[i==n];
+        }
     }
 
     void printSIZE(){
         /* to print the size. size = 0 -> it's connected in some set, size != 0 -> it's root. */
-        for(auto val : sz) cout << val << ' ';
-        cout << '\n';
+        for(int i = 1; i <= n; i++){
+            cout << sz[i] << " \n"[i==n];
+        }
     }
 };]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

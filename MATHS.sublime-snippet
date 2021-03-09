@@ -1,59 +1,33 @@
 <snippet>
     <content><![CDATA[
-template<class T>
+template<class T, class TR> // dataType, returnType
 class Math{
-    // copy : Math<datatype> mth; 
+    // copy : Math<int, int> mth;
 public:
-    T npow(T base, T exp) {
+    TR npow(T base, T exp) {
         /* TC : O(log(exp)) */
-        T result = 1;
+        TR res = 1;
         while (exp > 0) {
-            if (exp & 1) result = (result * base);
+            if (exp & 1) res = (res * base);
             base = (base * base);
             exp >>= 1;
         }
-        return result;
+        return res;
     }
 
-    int mpow(int base, int exp) {
-        /* TC : O(log(exp)) */
-        base %= mod;
-        int result = 1;
-        while (exp > 0) {
-            if (exp & 1) result = ((long long)result * base) % mod;
-            base = ((long long)base * base) % mod;
-            exp >>= 1;
-        }
-        return result;
-    }
-
-// -----------------------
-
-    T fact(T p){
+    TR fact(T p){
         /* TC : O(p) */
-        T res = 1;
+        TR res = 1;
         for(int i = 1; i <= p; i++){
             res *= i;
         }
         return res;
     }
 
-    T factMod(T p){
-        /* TC : O(p) */
-        T res = 1;
-        for(int i = 1; i <= p; i++){
-            res *= i;
-            res %= mod;
-        }
-        return res;
-    }    
-
-// -----------------------
-
-    T nCr(T n, T r){
+    TR nCr(T n, T r){
         /* TC: O(n) */
         if(n < r) return 0;
-        T res = 1;
+        TR res = 1;
         if(r > (n-r)) r = n-r;
         for(int i = 0; i < r; i++){
             res *= (n-i);
@@ -62,42 +36,12 @@ public:
         return res;
     }
 
-    T inv(T a){
-        /* TC: O(log(mod)) */
-        return mpow(a, mod-2);
-    }
-
-    T nCrMod(T n, T r){
-        /* TC: O(nlog(mod)) */
-        if(n < 0 || n < r) return 0;
-        T res = 1;
-        if(r > (n-r)) r = n-r;
-        for(int i = 0; i < r; i++){
-            res = (res%mod * (n - i)%mod)%mod;
-            res = (res * inv(i + 1))%mod;
-        }
-        return res;
-    }
-
-// -----------------------
-
-    T nPr(T n, T r){
+    TR nPr(T n, T r){
         /* TC : O(n) */
         if(n < r) return 0;
-        T res = 1;
+        TR res = 1;
         for(int i = 0; i < r; i++){
             res *= (n - i);
-        }
-        return res;
-    }
-
-    T nPrMod(T n, T r){
-        /* TC : O(n) */
-        if(n < r) return 0;
-        T res = 1;
-        for(int i = 0; i < r; i++){
-            res *= (n - i);
-            res %= mod;
         }
         return res;
     }

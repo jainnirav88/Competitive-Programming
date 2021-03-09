@@ -1,23 +1,25 @@
 <snippet>
     <content><![CDATA[
 vector<int> topo;
-bool vis[N];
-
-void dfs(int v){
-    vis[v] = true;
-    for(auto u : g[v]){
-        if(!vis[u]) dfs(u);
-    }
-    topo.push_back(v);
-}
 
 void topological_sort(){
     /* TC: O(n) */
-    clr(vis, false);
+    vector<bool> vis(n + 1, false);
     topo.clear();
-    for(int i = 0; i < n; i++){
+
+    function<void(int)> dfs = [&](int from)->void{
+        vis[from] = true;
+        for(auto to : g[from]){
+            if(vis[to]) continue;
+            dfs(to);
+        }
+        topo.push_back(from);
+    };
+
+    for(int i = 1; i <= n; i++){
         if(!vis[i]) dfs(i);
     }
+
     reverse(topo.begin(), topo.end());
 }]]></content>
     <tabTrigger>TOPOSORT</tabTrigger>

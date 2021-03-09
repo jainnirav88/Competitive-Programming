@@ -1,0 +1,29 @@
+<snippet>
+    <content><![CDATA[
+bool hasCycle(){
+    /* For the directed graph. */
+    vector<bool> vis(n + 1, false);
+    vector<bool> stk(n + 1, false);
+
+    function<bool(int)> dfs = [&](int from)->bool{
+        vis[from] = true, stk[from] = true;
+        for(auto to : g[from]){
+            if(stk[to]) return true;
+            if(!vis[to] && dfs(to)) return true;
+        }
+        stk[from] = false;
+        return false;
+    };
+
+    for(int i = 1; i <= n; i++){
+        if(!vis[i] && dfs(i)) return true;
+    }
+
+    return false;
+}]]></content>
+    => Refer cp-algorithm.
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>HASCYCLEDG</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

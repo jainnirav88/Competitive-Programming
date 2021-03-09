@@ -5,17 +5,17 @@ int dist[N]; // dist from the source
 
 bool bellmenFord(){
     /* Algo to check wheather there is a negative edge cycle?, TC : O(n*m) */
-    for(int i = 0; i < n; i++) dist[i] = inf;
+    for(int i = 0; i <= n; i++) dist[i] = inf;
     dist[0] = 0;
-    for(int i = 0; i < n-1; i++){
-        for(int j = 0; j < m; j++){
+    for(int i = 1; i < n; i++){
+        for(int j = 1; j <= m; j++){
             auto &[from, to, w] = g[j];
             if(dist[to] > dist[from] + w) dist[to] = dist[from] + w;
         }
     }
 
     bool hasCycle = false;
-    for(int j = 0; j < m; j++){
+    for(int j = 1; j <= m; j++){
         auto &[from, to, w] = g[j];
         if(dist[to] > dist[from] + w){
             hasCycle = true;

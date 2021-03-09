@@ -20,6 +20,7 @@ void prime_factor(int n){
         }
         if(cnt) pfact.push_back({i, cnt});
     }
+
     if(n > 1) pfact.push_back({n, 1});
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

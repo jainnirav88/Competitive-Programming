@@ -9,7 +9,7 @@
 // int dy[] = {-1,  0,  1,  1,  1,  0, -1, -1};
 
 bool isOk(int x, int y){
-    return x >= 0 && y >= 0 && x < n && y < m;
+    return x >= 1 && y >= 1 && x <= n && y <= m;
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>DIRECTION</tabTrigger>

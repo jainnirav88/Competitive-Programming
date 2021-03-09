@@ -1,6 +1,7 @@
 <snippet>
     <content><![CDATA[
 void bfs(int v){
+    vector<bool> vis(n + 1, false);
     queue<int> q;
     q.push(v);
     vis[v] = true;

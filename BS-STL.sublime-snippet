@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[
+struct BSSTL{
+    /* 
+        Create obj using : BSSTL bs;
+        -> [left, right) : search range
+        -> key : value to search
+        -> Time Complexity : O(logn)
+    */
+
+    template<typename T>
+    int upBound(T left, T right, int key){
+    /* Returns the index of strictly greter(>) element than the key. */
+        int ind = upper_bound(left, right, key) - left + 1;
+        return ind;
+    }
+
+    template<typename T>
+    int lowBound(T left, T right, int key){
+    /* Returns the index of greater or equal(>=) element than the key. */
+        int ind = lower_bound(left, right, key) - left + 1;
+        return ind;
+    }
+
+    template<typename T>
+    int bigger(T left, T right, int key){
+    /* Number of elements strictly greater than the key. */
+        int res = right - upper_bound(left, right, key);
+        return res;
+    }
+
+    template<typename T>
+    int smaller(T left, T right, int key){
+    /* Number of elements strictly smaller than the key. */
+        int res = lower_bound(left, right, key) - left;
+        return res;
+    }
+};]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>BSSTL</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

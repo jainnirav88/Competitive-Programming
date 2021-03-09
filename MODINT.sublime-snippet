@@ -83,10 +83,10 @@ public:
 };
 using mint = modnum<mod>;
 /*/-------------------------------- MODINT --------------------------------/*/]]></content>
-    Description : Copied from the ecnerwala.
+    Description : Copied from the ecnerwala submission.
     Use : When the result is too large and we have to calculate result with given modulo then this class is used.
     More Details : 
-    -> Typecast variable accordingly with using this class.
+    -> Typecast variable accordingly to use this class.
     -> Use int32_t to typecast.
     -> Be careful for passing it as a parameter.
     <tabTrigger>MINT</tabTrigger>

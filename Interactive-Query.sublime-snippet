@@ -1,14 +1,16 @@
 <snippet>
     <content><![CDATA[
-void dfs(int v){
-    vis[v] = true;
-    for(auto u : g[v]){
-        if(vis[u]) continue;
-        dfs(u);
-    }
+int query(){
+
+#ifdef LOCAL
+
+#else
+
+#endif
+
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>DFSSNIPPET</tabTrigger>
+    <tabTrigger>QUERY</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

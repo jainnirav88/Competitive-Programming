@@ -4,7 +4,7 @@ int binary_search(int left, int right){
     /* O((depends) * logn) */
     int mid;
     while(left <= right){
-        mid = left + (right - left)/2;
+        mid = left + (right - left) / 2;
         if(check(mid)){
             left = mid + 1;
             // right = mid - 1;
