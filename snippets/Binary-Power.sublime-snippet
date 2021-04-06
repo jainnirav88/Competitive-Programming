@@ -1,18 +1,18 @@
 <snippet>
     <content><![CDATA[
-int mpow(int base, int exp){
+template<class T>
+T bpow(T base, T exp){
     /* O(logn) */
-    base %= mod;
-    int result = 1;
+    T result = 1;
     while (exp > 0) {
-        if (exp & 1) result = ((long long)result * base) % mod;
-        base = ((long long)base * base) % mod;
+        if (exp & 1) result = (result * base);
+        base = (base * base);
         exp >>= 1;
     }
     return result;
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>POWMOD</tabTrigger>
+    <tabTrigger>POW-BINARY</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

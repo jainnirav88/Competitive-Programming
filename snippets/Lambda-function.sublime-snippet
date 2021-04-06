@@ -1,15 +1,9 @@
 <snippet>
     <content><![CDATA[
-void dfs(int from){
-    vis[from] = true;
-    for(auto to : g[from]){
-        if(vis[to]) continue;
-        dfs(to);
-    }
-}]]></content>
-    <description>dfs</description>
+auto ${1:fun} = [&]($2)->${3:void}{
+};]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>DFSSNIPPET</tabTrigger>
+    <tabTrigger>function</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
 </snippet>

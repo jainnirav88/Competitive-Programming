@@ -1,0 +1,42 @@
+<snippet>
+    <content><![CDATA[
+namespace BSSTL{
+    template<typename T1, typename T2>
+    int upBoundInd(T1 left, T1 right, T2 key){
+        // returns the "index" of "strictly greater(>)" element than the key. 
+        int ind = upper_bound(left, right, key) - left${1: + 1};
+        return ind;
+    }
+
+    template<typename T1, typename T2>
+    int lowBoundInd(T1 left, T1 right, T2 key){
+        // returns the "index" of "greater or equal(>=)" element than the key. 
+        int ind = lower_bound(left, right, key) - left$1;
+        return ind;
+    }
+
+    template<typename T1, typename T2>
+    int cntBigger(T1 left, T1 right, T2 key){
+        // "count" of elements "strictly greater" than the key. 
+        int cnt = right - upper_bound(left, right, key);
+        return cnt;
+    }
+
+    template<typename T1, typename T2>
+    int cntSmaller(T1 left, T1 right, T2 key){
+        // "count" of elements "strictly smaller" than the key. 
+        int cnt = lower_bound(left, right, key) - left;
+        return cnt;
+    }
+
+    // [left, right) : search range
+    // key : value to search
+    // Time Complexity : O(logn)
+    // #pragma message("1-based indexing, be careful");
+};
+using namespace BSSTL;]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>BSSTL</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

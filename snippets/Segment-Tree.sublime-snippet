@@ -3,6 +3,7 @@
 class SegmentTree{
     /* 1 as a root, create with SegmentTree sgt;
        node = 1, start = 1/0, end = n/n-1 */
+    // #pragma message("1-indexed, be careful")
 public :
     vector<int> segTree;
     int base = INT_MAX; // out of range.
@@ -72,6 +73,6 @@ public :
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>SEGMENTTREE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>source.c++</scope>
     <!-- Check doc for details. -->
 </snippet>

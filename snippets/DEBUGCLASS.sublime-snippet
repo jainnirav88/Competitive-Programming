@@ -11,9 +11,9 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
     debug_out(comma+1, args...);
 }
 
-#ifndef ONLINE_JUDGE
+#ifdef LOCAL
 #define deb(...) cerr << "[ ", debug_out(#__VA_ARGS__, __VA_ARGS__)
-#define line     for(int i = 0; i < 50; i++){ cerr << '-'; } cerr << '\n'
+#define line     for(int i = 1; i <= 50; i++) cerr << "-\n"[i==50];
 #else
 #define deb(...)
 #define line

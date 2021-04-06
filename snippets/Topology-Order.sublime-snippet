@@ -2,8 +2,9 @@
     <content><![CDATA[
 vector<int> topo;
 
-void topological_sort(){
+void topoSort(){
     /* TC: O(n) */
+
     vector<bool> vis(n + 1, false);
     topo.clear();
 
@@ -21,6 +22,8 @@ void topological_sort(){
     }
 
     reverse(topo.begin(), topo.end());
+
+    // #pragma message("1 based indexing, be careful")
 }]]></content>
     <tabTrigger>TOPOSORT</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

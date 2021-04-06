@@ -1,9 +1,9 @@
 <snippet>
     <content><![CDATA[
-rep(i, 0, n) rep(j, 0, m) cin >> v[i][j];
-]]></content>
+#pragma GCC optimize("Ofast")
+#pragma GCC target("avx,avx2,fma")]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>2DREPIN</tabTrigger>
+    <tabTrigger>PRAGMA</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <scope>source.c++</scope>
+    <!-- <scope>source.python</scope> -->
 </snippet>

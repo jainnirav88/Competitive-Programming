@@ -1,12 +1,10 @@
 <snippet>
     <content><![CDATA[
-template<class T, class TR> // dataType, returnType
-class Math{
-    // copy : Math<int, int> mth;
-public:
-    TR npow(T base, T exp) {
+namespace Math{
+    template<typename T>
+    T npow(T base, T exp) {
         /* TC : O(log(exp)) */
-        TR res = 1;
+        T res = 1;
         while (exp > 0) {
             if (exp & 1) res = (res * base);
             base = (base * base);
@@ -15,19 +13,21 @@ public:
         return res;
     }
 
-    TR fact(T p){
+    template<typename T>
+    T fact(T p){
         /* TC : O(p) */
-        TR res = 1;
+        T res = 1;
         for(int i = 1; i <= p; i++){
             res *= i;
         }
         return res;
     }
 
-    TR nCr(T n, T r){
+    template<typename T>
+    T nCr(T n, T r){
         /* TC: O(n) */
         if(n < r) return 0;
-        TR res = 1;
+        T res = 1;
         if(r > (n-r)) r = n-r;
         for(int i = 0; i < r; i++){
             res *= (n-i);
@@ -36,19 +36,22 @@ public:
         return res;
     }
 
-    TR nPr(T n, T r){
+    template<typename T>
+    T nPr(T n, T r){
         /* TC : O(n) */
         if(n < r) return 0;
-        TR res = 1;
+        T res = 1;
         for(int i = 0; i < r; i++){
             res *= (n - i);
         }
         return res;
     }
-};]]></content>
+};
+using namespace Math;]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>CMATHS</tabTrigger>
+    <description>math class</description>
+    <tabTrigger>MATHS</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>source.c++</scope>
     <!-- Check doc for more details. -->
 </snippet>

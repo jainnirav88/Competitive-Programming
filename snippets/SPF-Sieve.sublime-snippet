@@ -1,17 +1,16 @@
 <snippet>
     <content><![CDATA[
-const int spfMax = 1e5 + 5;
+const int spfMax = ${1:1e5} + 5;
 int spf[spfMax];
 
-void computeSPF()
-{
-    /* TC : O(nlogn), "smallest prime factor"*/
-    clr(spf, -1);
+void computeSPF(){
+    /* TC : O(nlogn), "smallest prime factor" */
     spf[1] = 1;
     for(int i = 2; i < spfMax; i++){
-        if(spf[i] == -1){
-            for(int j = i; j < spfMax; j += i){
-                if(spf[j] == -1) spf[j] = i;
+        if(spf[i] == 0){
+            spf[i] = i;
+            for(int j = i * i; j < spfMax; j += i){
+                if(spf[j] == 0) spf[j] = i;
             }
         }
     }

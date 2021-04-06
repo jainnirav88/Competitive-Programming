@@ -1,9 +1,9 @@
 <snippet>
     <content><![CDATA[
-array<int, 3> g[N]; // from, to, weight
+// array<int, 3> g[N]; // from, to, weight
 int dist[N]; // dist from the source
 
-bool bellmenFord(){
+bool bellmen_ford(){
     /* Algo to check wheather there is a negative edge cycle?, TC : O(n*m) */
     for(int i = 0; i <= n; i++) dist[i] = inf;
     dist[0] = 0;
@@ -28,6 +28,6 @@ bool bellmenFord(){
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>BELLMANFORD</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>source.c++</scope>
     <!-- For more details check doc. -->
 </snippet>

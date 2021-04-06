@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[
+int tin[N], tout[N];
+
+void eulerTour(int root){
+// time complexity : O(n) same as bfs
+    int timer = 0;
+
+    function<void(int, int)> dfs = [&](int from, int par){
+        tin[from] = ++timer;
+        for(auto to : g[from]){
+            if(to == par) continue;
+            dfs(to, from);
+        }
+        tout[from] = timer;
+    };
+
+    dfs(root, root);
+    assert(timer == n); // timer should be now n
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>EULER-TOUR</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

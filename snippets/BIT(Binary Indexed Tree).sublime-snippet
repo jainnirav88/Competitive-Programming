@@ -1,0 +1,43 @@
+<snippet>
+    <content><![CDATA[
+template<class T>
+struct BIT{
+    // create using BIT<int> bit(n);
+
+    int n;
+    vector<T> bit_v;
+
+    BIT(int s){
+        bit_v = vector<T>(s + 1, 0);
+        n = s;
+    }
+
+    void add(int loc, T x){
+        if (loc <= 0) return;
+        while (loc <= n){
+            bit_v[loc] += x;
+            loc += loc & (-loc);
+        }
+    }
+
+    T query(int loc){
+        T sum = 0;
+        while (loc > 0){
+            sum += bit_v[loc];
+            loc -= loc & (-loc);
+        }
+        return sum;
+    }
+
+    T rangeQuery(int l, int r){
+        return query(r) - query(l - 1);
+    }
+
+    // #pragma message("BITs are 1-indexed, be careful")
+};]]></content>
+    -> refer cp-algorithm for more details.
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>BIT</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

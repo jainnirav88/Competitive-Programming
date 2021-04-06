@@ -1,18 +1,16 @@
 <snippet>
     <content><![CDATA[
-const int num = 1e7;
+const int num = ${1:1e7} + 5;
 bool comp[num];
 vector<int> primes;
 
-void sieve()
-{
+void sieve(){
     memset(comp, false, sizeof(comp));
     primes.clear();
 
     bool done = false;
     for(int i = 2; i < num; i++){
-        if(!comp[i])
-        {
+        if(!comp[i]){
             primes.push_back(i);
 
             if ((i * i) > num) done = true;
