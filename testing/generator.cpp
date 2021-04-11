@@ -1,13 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
 
-const long long mn_val = 0;
-const long long mx_val = 1e18;
-const int mn_len = 1;
-const int mx_len = 100;
+using ll = long long int;
+using ld = long double;
+using ull = unsigned long long int;
 
-#define int long long
+#define rep(x, k, n)        for(int x = (k); x <= (n); ++x)
+#define rept(x, k, n)       for(int x = (k); x < (n); ++x)
+#define repr(x, k, n)       for(int x = (k); x >= (n); --x)
+#define pb                  push_back
+#define F                   first
+#define S                   second
+#define siz(x)              ((int)(x).size())
+#define o2(x)               ((x) * (x))
+#define all(x)              (x).begin(), (x).end()
+#define clr(x, k)           memset(x, k, sizeof(x)) // 0, -1
+#define printv(v, k, n)     rep(i, k, n) cout << v[i] << " \n"[i==n];
+#define print2dv(V,k,n,m)   rep(j, k, n) printv(V[j], k, m);
+#define report(x)           cout << ((x) ? "Yes" : "No") << '\n'
+#define setbits(x)          __builtin_popcountll(x)
+#define int                 long long // "be carefull"
+
+const long long mn_val = 0; // min-value in the test case
+const long long mx_val = 1e18; // max-value
+const int mn_len = 1; // min-length of the array, string etc.
+const int mx_len = 100; // max-length of the array, string etc.
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
@@ -147,24 +164,24 @@ namespace generator{
         return res;
     }
 };
+
 using namespace generator;
 
+/*/-------------------------------------------------------------------------/*/
 /*/------------------------- Modify Below function -------------------------/*/
+/*/-------------------------------------------------------------------------/*/
 
-// comment/uncomment the next line in if you have test_cases.
+// comment/uncomment the next line in if you have multi_test.
+#define MULTI_TEST
 
-#define SINGLE_TEST
-
+const int min_tests = 1;
 const int max_tests = 100;
+const int min_val = 0;
+const int max_val = 1e9;
 
 // complete this function for each test case.
-
+// make_test_example at last
 void make_test(){
-
-    string s = get_string();
-    int num = get_num(5000, 10000);
-    cout << (int)s.size() << ' ' << num << '\n';
-    cout << s << '\n';
 
 }
 
@@ -173,22 +190,26 @@ int32_t main(){
     // demo* d = new demo;
 
     int t = 1;
-    
-    #ifndef SINGLE_TEST 
-        t = get_num(1ll, max_tests), cout << t << endl;
+
+    #ifdef MULTI_TEST 
+        t = get_num(min_tests, max_tests);
+        assert(t >= min_tests && t <= max_tests);
+        cout << t << '\n';
     #endif
     
     for(int i = 1; i <= t; i++){
 
         make_test();
 
-        // example();
+        // make_test_example(); // at last
     }
 
     return 0;
 }
 
-/*/----------------------------- Explanations -----------------------------/*/
+/*/-------------------------------------------------------------------------/*/
+/*/----------------------------- Explanations ------------------------------/*/
+/*/-------------------------------------------------------------------------/*/
 
 /*
 -> get_num(a, b); 
@@ -209,14 +230,13 @@ int32_t main(){
 
 */
 
-/*
 struct demo{
     demo(){
 
         cout << get_num() << endl;
         cout << get_num(10 , 20) << "\n";
 
-        vector<int> v = get_array(12 , 1 , 1000); 
+        vector<int> v = get_array(12ll, 1ll, 1000ll); 
         // size, min_element, max_element.
         // you can call g.get_array() or g.get_array(10) too
         // see definition for details.
@@ -241,11 +261,10 @@ struct demo{
         // both graph will have 10 nodes and 12 edges.
     }
 };
-*/
 
 /* 
 
-: for a question having sample tests like this
+=> for a question having sample tests like this
 
 T 
 N
@@ -254,16 +273,30 @@ An array of size N.(a1 , a2 , a3 , a4 , .... an)
 
 */
 
-/*
-void example(){
+void make_test_example(){
     int N = get_num(1, 10);
     string s = get_string(N);
-    vector<int> v = get_array(N, 0, 20);
+    vector<int> v = get_array(N, 0ll, 20ll);
 
     // you have to output them too.
     cout << N << endl;
     cout << s << endl;
 
     for(auto i: v) cout << i << " "; cout << endl;
+
+    // int n = get_num(15, 20);
+    // assert(n >= 15 && n <= 20);
+    // vector<int> v = get_array(n, min_val, max_val);
+    // assert((int)v.size() == n);
+    // cout << n << '\n';
+    // for(auto it : v){
+    //     assert(it >= min_val && it <= max_val);
+    //     cout << it << ' ';
+    // }
+    // cout << '\n';
+
+    // string s = get_string();
+    // int num = get_num(5000, 10000);
+    // cout << (int)s.size() << ' ' << num << '\n';
+    // cout << s << '\n';
 }
-*/

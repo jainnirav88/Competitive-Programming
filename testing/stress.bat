@@ -20,5 +20,7 @@ set i = 1
     goto loop
 
 :fail
-    echo Found failing test, check input for the test case where your solution fails!
+    echo Found failing test, check input.
+    echo test case : 
+    type input
     pause
