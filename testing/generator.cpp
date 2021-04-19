@@ -1,4 +1,4 @@
-#include <bits/stdc++.h>
+#include <bits/stdc++.h> // 198
 using namespace std;
 
 using ll = long long int;
@@ -28,7 +28,7 @@ const int mx_len = 100; // max-length of the array, string etc.
 
 mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
 
-long long rnd(long long x = mn_val, long long y = mx_val){ 
+long long rnd(long long x = mn_val, long long y = mx_val){
     return (rng() % (y - x + 1)) + x;
 };
 
@@ -38,6 +38,21 @@ namespace generator{
         return rnd(a, b);
     }
 
+    string get_binary_string(int len = -1){
+
+        if(len == -1){
+            len = rnd(mn_len, mx_len);
+        }
+
+        string str(len, '0');
+
+        for(auto &ch : str){
+            if(rng() & 1) ch ^= 1;
+        }
+
+        return str;
+    }
+
     string get_string(int len = -1, bool lowercase_only = true){
 
         if(len == -1){
@@ -45,13 +60,13 @@ namespace generator{
         }
 
         string str(len, '0');
-        
+
         for(int i = 0; i < len; i++){
             str[i] = (rnd(0, 25) + 'a');
         }
 
         if(lowercase_only) return str;
-        
+
         for(auto &i : str){
             if(rng() & 1) i ^= 32; // swap case (make c to C)
         }
@@ -116,7 +131,7 @@ namespace generator{
                     int v = rnd(1, n);
 
                     if(u == v || edge_set.count({u, v}) || edge_set.count({v, u})) continue;
-                    
+
                     edge_set.insert({u,v});
                     break;
                 }
@@ -125,7 +140,7 @@ namespace generator{
                 int u = rnd(1, n);
                 int v = rnd(1, n);
 
-                if(u == v || edge_set.count({u, v}) || edge_set.count({v, u})) 
+                if(u == v || edge_set.count({u, v}) || edge_set.count({v, u}))
                     goto label;
                 else edge_set.insert({u,v});
                 */
@@ -133,9 +148,9 @@ namespace generator{
         }
         else{
             for(int i = 1; i <= m; ++i){
-                while(true){ 
+                while(true){
                     // not tested, refer the commented one if doesn't work correctly
-                    
+
                     int u = rnd(1, n);
                     int v = rnd(1, n);
 
@@ -164,7 +179,6 @@ namespace generator{
         return res;
     }
 };
-
 using namespace generator;
 
 /*/-------------------------------------------------------------------------/*/
@@ -174,14 +188,14 @@ using namespace generator;
 // comment/uncomment the next line in if you have multi_test.
 #define MULTI_TEST
 
-const int min_tests = 1;
-const int max_tests = 100;
-const int min_val = 0;
-const int max_val = 1e9;
+constexpr int min_tests = 1, max_tests = 10;
+constexpr int min_val = 1, max_val = 1000000000;
+constexpr int min_len = 1, max_len = 100000;
 
 // complete this function for each test case.
-// make_test_example at last
+// namespace examples at last
 void make_test(){
+
 
 }
 
@@ -191,12 +205,12 @@ int32_t main(){
 
     int t = 1;
 
-    #ifdef MULTI_TEST 
+    #ifdef MULTI_TEST
         t = get_num(min_tests, max_tests);
         assert(t >= min_tests && t <= max_tests);
         cout << t << '\n';
     #endif
-    
+
     for(int i = 1; i <= t; i++){
 
         make_test();
@@ -212,7 +226,7 @@ int32_t main(){
 /*/-------------------------------------------------------------------------/*/
 
 /*
--> get_num(a, b); 
+-> get_num(a, b);
 // gives a random number between [a, b] - if a, b given.
 // otherwise get_num() gives a random_number between 0 and 10**18;
 
@@ -220,12 +234,12 @@ int32_t main(){
 // gives a string of length l.
 // (by default lowercase you can change that by calling get_string(l, false);
 
--> get_array(len, min_num_of_array, max_num_of_array) 
+-> get_array(len, min_num_of_array, max_num_of_array)
     // note that this returns a vector;
 
 -> get_tree(n) gives a tree of n nodes(list of edges)
 
--> get_simple_graph(nodes, edges, bool connected = 1) 
+-> get_simple_graph(nodes, edges, bool connected = 1)
 // you can change connected/disconnected option too. (list of edges)
 
 */
@@ -236,7 +250,7 @@ struct demo{
         cout << get_num() << endl;
         cout << get_num(10 , 20) << "\n";
 
-        vector<int> v = get_array(12ll, 1ll, 1000ll); 
+        vector<int> v = get_array(12ll, 1ll, 1000ll);
         // size, min_element, max_element.
         // you can call g.get_array() or g.get_array(10) too
         // see definition for details.
@@ -254,49 +268,73 @@ struct demo{
 
         // similary for graph
         // connected_graph
-        get_simple_graph(10, 12); 
+        get_simple_graph(10, 12);
 
         // can be disconnected_graph
-        get_simple_graph(10, 12, 0); 
+        get_simple_graph(10, 12, 0);
         // both graph will have 10 nodes and 12 edges.
     }
 };
 
-/* 
+/*
 
 => for a question having sample tests like this
 
-T 
+T
 N
 S (string)
 An array of size N.(a1 , a2 , a3 , a4 , .... an)
 
 */
 
-void make_test_example(){
-    int N = get_num(1, 10);
-    string s = get_string(N);
-    vector<int> v = get_array(N, 0ll, 20ll);
+namespace examples{
+    void make_test_array(){
+        int N = get_num(min_len, max_len);
+        cout << N << '\n';
+        vector<int> v = get_array(N, min_val, max_val);
+        assert(siz(v) == N);
+        for(auto it : v){
+            assert(it >= min_val && it <= max_val);
+            cout << it << ' ';
+        }
+        cout << '\n';
+    }
 
-    // you have to output them too.
-    cout << N << endl;
-    cout << s << endl;
+    void make_test_string(){
+        int N = get_num(min_len, max_len);
+        cout << N << '\n'; // comment/uncomment
+        string s = get_string(N);
+        assert(siz(s) == N);
+        cout << s << '\n';
+    }
 
-    for(auto i: v) cout << i << " "; cout << endl;
+    void make_test_example(){
+        int N = get_num(1, 10);
+        string s = get_string(N);
+        vector<int> v = get_array(N, 0ll, 20ll);
 
-    // int n = get_num(15, 20);
-    // assert(n >= 15 && n <= 20);
-    // vector<int> v = get_array(n, min_val, max_val);
-    // assert((int)v.size() == n);
-    // cout << n << '\n';
-    // for(auto it : v){
-    //     assert(it >= min_val && it <= max_val);
-    //     cout << it << ' ';
-    // }
-    // cout << '\n';
+        // you have to output them too.
+        cout << N << endl;
+        cout << s << endl;
 
-    // string s = get_string();
-    // int num = get_num(5000, 10000);
-    // cout << (int)s.size() << ' ' << num << '\n';
-    // cout << s << '\n';
-}
+        for(auto i: v) cout << i << " "; cout << endl;
+
+        // int n = get_num(15, 20);
+        // assert(n >= 15 && n <= 20);
+        // vector<int> v = get_array(n, min_val, max_val);
+        // assert((int)v.size() == n);
+        // cout << n << '\n';
+        // for(auto it : v){
+        //     assert(it >= min_val && it <= max_val);
+        //     cout << it << ' ';
+        // }
+        // cout << '\n';
+
+        // string s = get_string();
+        // int num = get_num(5000, 10000);
+        // cout << (int)s.size() << ' ' << num << '\n';
+        // cout << s << '\n';
+    }
+};
+using namespace examples;
+
