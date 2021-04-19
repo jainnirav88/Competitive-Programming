@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[
+constexpr int lsN = 1e7 + 5;
+int spf[lsN + 1];
+vector<int> primes;
+
+// Note: this sieve is O(n), but the constant factor is worse than the O(n log log n) sieve due to the multiplication.
+void linear_sieve(){
+    for(int i = 2; i <= lsN; ++i){
+        if(spf[i] == 0){
+            spf[i] = i;
+            primes.push_back(i);
+        }
+        for(int j = 0; j < siz(primes) && primes[j] <= spf[i] && i*primes[j] <= lsN; ++j){
+            spf[i * primes[j]] = primes[j];
+        }
+    }
+}]]></content>
+    <description>Linear - sieve</description>
+    <!-- Note : Implementation, refer cp - alogorithm -->
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>LINEAR-SIEVE</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.cpp, source.c++</scope>
+</snippet>

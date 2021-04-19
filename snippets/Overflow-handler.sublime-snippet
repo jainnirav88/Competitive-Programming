@@ -1,0 +1,65 @@
+<snippet>
+    <content><![CDATA[
+namespace Overflow{
+
+    bool isPositive(int x){
+        return x > 0;
+    }
+
+    bool isOverflowAdd(int a, int b){
+        if(isPositive(a) && isPositive(b)){
+            if(a > (LLONG_MAX - b)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else if(!isPositive(a) && !isPositive(b)){
+            if(a < (LLONG_MIN - b)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            return false;
+        }
+    }
+
+    bool isOverflowMul(int a, int b){
+        if(a == 0 || b == 0){
+            return false;
+        }
+        else if(isPositive(a) ^ isPositive(b)){
+            if(a < (LLONG_MIN / b)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        else{
+            if(a == LLONG_MIN || b == LLONG_MIN){
+                return true;
+            }
+            else{
+                a = abs(a);
+                b = abs(b);
+            }
+            if(a > (LLONG_MAX/b)){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+};
+using namespace Overflow;]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>OVERFLOW</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.cpp, source.c++</scope>
+</snippet>

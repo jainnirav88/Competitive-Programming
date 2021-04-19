@@ -1,7 +1,11 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 56 70 "Baklol, Take it easy"
+#include<bits/stdc++.h> // 65 79 "Baklol☺, Take it easy"
 using namespace std;
+
+// #include<ext/pb_ds/assoc_container.hpp>
+// using namespace __gnu_pbds;
+
 using ll = long long int;
 using ld = long double;
 using ull = unsigned long long int;
@@ -19,16 +23,20 @@ using ull = unsigned long long int;
 #define printv(v, k, n)     rep(i, k, n) cout << v[i] << " \n"[i==n];
 #define print2dv(V,k,n,m)   rep(j, k, n) printv(V[j], k, m);
 #define report(x)           cout << ((x) ? "Yes" : "No") << '\n'
+#define getunique(x, y)     unique(x, y) - (x); // array should be shorted
 #define setbits(x)          __builtin_popcountll(x)
 #define int                 long long // "be carefull"
 
 typedef vector<int>         vi;
 typedef pair<int, int>      pii;
 
+// typedef tree<int, null_type, less<int>, rb_tree_tag,tree_order_statistics_node_update> pbds;
+
 template <typename Arg1>
 void debug_out(const char* name, Arg1&& arg1){
     cerr << name << " = " << arg1  << " ]" << "\n";
 }
+
 template <typename Arg1, typename... Args>
 void debug_out(const char* names, Arg1&& arg1, Args&&... args){
     const char* comma = strchr(names + 1, ',');
@@ -50,6 +58,7 @@ void debug_out(const char* names, Arg1&& arg1, Args&&... args){
 
 constexpr long long inf = 2e9, ninf = -2e9;
 constexpr long double eps = 1e-9;
+constexpr long double pi = 3.141592653589793238;
 constexpr int mod = 1e9 + 7; // 998244353;
 constexpr int N = 3e5 + 5, M = 2e5 + 5;
 
@@ -90,7 +99,8 @@ int32_t main() {
 -> Please, don't get stuck at one approach only.
 -> Understood the problem?, misread?
 -> edge cases, n = 1 ?
--> binary search ?, brute_force ?
+-> binary search ?
+-> brute_force ?
 -> time complexity - 1 sec : 4e8 will work but risky.
 -> space complexity - 256 mb : 6e7(int), 3e7(ll), 2e8(bool, char), will work.
 -> entire input - multiple testcases.
@@ -105,6 +115,7 @@ int32_t main() {
 /*
 -> Don't assume blindly.
 -> Focus on problem.
+-> Recovery from the failure.
 -> Do consider worst case time complexity.
 -> If solution is barely passing then do submit again after doing optimization.
 -> Be carefull in nested loop. Iterating variable name should be different for both loop.

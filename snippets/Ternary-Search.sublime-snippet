@@ -12,8 +12,9 @@ int ternery_search(int left, int right){
     }
     return left;
 }]]></content>
+    <!-- note : refer cp-algorithm and codeforces blog -->
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>TERNARY_SEARCH</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>source.c++, source.cpp</scope>
 </snippet>

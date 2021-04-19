@@ -1,10 +1,8 @@
 <snippet>
     <content><![CDATA[
-vector<pair<int, int>> pfact; // (prime_factor, count)
-
-void prime_factors(int n){
+vector<pair<int, int>> prime_factors(int n){
     /* TC : O(sqrt(n)) */
-    pfact.clear();
+    vector<pair<int, int>> pfact;
 
     int cnt = 0;
     while(n % 2 == 0){
@@ -23,6 +21,8 @@ void prime_factors(int n){
     }
 
     if(n > 1) pfact.push_back({n, 1});
+
+    return pfact;
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>PRIMEFACTORIZE</tabTrigger>

@@ -1,12 +1,12 @@
 <snippet>
     <content><![CDATA[
-void dijkstra(int v){
+void dijkstra(int root){
     vector<bool> vis(n + 1, false);
     for(int i = 0; i <= n; i++) dist[i] = inf;
 
     priority_queue<pii, vector<pii>, greater<pii>> pq; // weight, node
-    dist[v] = 0;
-    pq.push({dist[v], v});
+    dist[root] = 0;
+    pq.push({dist[root], root});
 
     while(!pq.empty()){
         auto [W, from] = pq.top();

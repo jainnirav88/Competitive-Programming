@@ -1,7 +1,20 @@
 {
-    "cmd": ["g++.exe", "-DLOCAL", "-std=c++17", "${file}", "-o", "${file_base_name}.exe", "&&" , "${file_base_name}.exe<input.txt>output.txt"],
+    "cmd": [
+        "g++.exe",
+        "-DLOCAL",
+        "-std=c++17",
+        "${file}",
+        "-o",
+        "${file_base_name}.exe",
+        "&&",
+        "${file_base_name}.exe<E:/Programming/CP/A-Main/ip_op/ip.txt>E:/Programming/CP/A-Main/ip_op/op.txt"
+    ],
     "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
     "shell": true,
     "working_dir": "$file_path",
     "selector": "source.cpp"
 }
+
+// g++ -DLOCAL -std=c++17 assoc_container.hpp // -> to precompile the headers
+// g++ -DLOCAL -std=c++17 stdc++.h // -> to precompile the headers
+// note : you need to go where header files are present.

@@ -1,8 +1,7 @@
 [
-	{ "keys": ["f5"], "command": "build", "args": {"select": true} },
 	{ "keys": ["f1"], "command": "cancel_build" },
-    { "keys": ["f6"], "command": ""}
+	{ "keys": ["f5"], "command": "build", "args": {"select": true} },
+    { "keys": ["f8"], "command": "zoom_pane", "args": {"fraction": 1, "myOwn": 1} },
+    { "keys": ["f6"], "command": "zoom_pane", "args": {"fraction": 0.76, "myOwn": 1} },
 	// { "keys": ["alt+b"], "command": "cancel_build" }
-	// { "keys": ["alt+b"], "command": "exec", "args": {"kill": true} }
-	// { "keys": ["ctrl+q"], "command": "exec", "args": {"kill": true} }
 ]

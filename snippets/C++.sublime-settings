@@ -1,0 +1,10 @@
+// These settings override both User and Default settings for the C++ syntax
+{
+    "trim_trailing_white_space_on_save": true,
+
+    // Set to true to automatically save files when switching to a different file
+    // or application
+    "save_on_focus_lost": true,
+
+    "remember_full_screen": true
+}

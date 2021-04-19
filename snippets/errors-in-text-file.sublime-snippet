@@ -1,9 +1,10 @@
 <snippet>
     <content><![CDATA[
-auto ${1:fun} = [&]($2)->${3:void}{
-};]]></content>
+#ifdef LOCAL
+    freopen("../ip_op/errors.txt", "w", stderr);
+#endif]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>LAMBDA-FUNCTION</tabTrigger>
+    <tabTrigger>ERROR</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <scope>source.c++</scope>
+    <!-- <scope>source.python</scope> -->
 </snippet>

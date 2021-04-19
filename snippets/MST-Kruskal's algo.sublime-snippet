@@ -1,0 +1,76 @@
+<snippet>
+    <content><![CDATA[
+class DSU {
+    // Copy : DSU dsu(n);
+public:
+    vector<int> arr, sz; // size of roots.
+    int components;
+
+    DSU(int n){ // n = size
+        components = n;
+        for(int i = 0; i <= n; i++){
+            arr.push_back(i);
+            sz.push_back(1); // Initially all are root -> size = 1.
+        }
+    }
+
+    int root(int v){
+        while(v != arr[v]) v = arr[v];
+        return v;
+    }
+
+    bool find(int v, int u){ // isConnected?
+        return root(v) == root(u);
+    }
+
+    bool Union(int v, int u){
+        int root_v = root(v);
+        int root_u = root(u);
+        if(root_v == root_u) return false;
+
+        if(sz[root_v] < sz[root_u]) swap(root_v, root_u);
+        
+        arr[root_u] = root_v;
+        sz[root_v] += sz[root_u];
+        sz[root_u] = 0;
+        components--;
+        
+        return true;
+    }
+
+    void printARR(){
+        /* to print the array, 1 - based */
+        for(int i = 1; i <= n; i++){
+            cout << arr[i] << " \n"[i==n];
+        }
+    }
+
+    void printSIZE(){
+        /* to print the size. size = 0 -> it's connected in some set, size != 0 -> it's root, 1 - based */
+        for(int i = 1; i <= n; i++){
+            cout << sz[i] << " \n"[i==n];
+        }
+    }
+};
+
+// time-complexity: O(MlogN)
+int mst_Kruskal(){
+
+    DSU dsu(n);
+
+    sort(edges.begin(), edges.end());
+
+    int res = 0;
+
+    for(auto [weight, from, to] : edges){
+        if(dsu.Union(from, to)) res += weight;
+    }
+
+    return res;
+}]]></content>
+    <description>MST - krushkal's algo.</description>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>MST</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.cpp, source.c++</scope>
+</snippet>

@@ -1,12 +1,10 @@
 <snippet>
     <content><![CDATA[
-vector<int> topo;
-
-void topoSort(){
-    /* TC: O(n) */
+// TC: O(n)
+vector<int> topoSort(){
 
     vector<bool> vis(n + 1, false);
-    topo.clear();
+    vector<int> topo;
 
     function<void(int)> dfs = [&](int from)->void{
         vis[from] = true;
@@ -23,6 +21,7 @@ void topoSort(){
 
     reverse(topo.begin(), topo.end());
 
+    return topo;
     // #pragma message("1 based indexing, be careful")
 }]]></content>
     <tabTrigger>TOPOSORT</tabTrigger>
