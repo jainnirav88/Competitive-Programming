@@ -1,0 +1,50 @@
+<snippet>
+    <content><![CDATA[
+// nearest greater(>) to the right
+stack<int> stk;
+for(int i = n; i >= 1; i--){
+    while(!stk.empty() && v[stk.top()] <= v[i]){
+        stk.pop();
+    }
+    if(!stk.empty()) ngr[i] = stk.top();
+    else ngr[i] = n+1;
+    stk.push(i);
+}
+
+// nearest smaller(<) to the right
+stack<int> stk;
+for(int i = n; i >= 1; i--){
+    while(!stk.empty() && v[stk.top()] >= v[i]){
+        stk.pop();
+    }
+    if(!stk.empty()) nsr[i] = stk.top();
+    else nsr[i] = n+1;
+    stk.push(i);
+}
+
+// nearest greater(>) to the left
+stack<int> stk;
+for(int i = 1; i <= n; i++){
+    while(!stk.empty() && v[stk.top()] <= v[i]){
+        stk.pop();
+    }
+    if(!stk.empty()) ngl[i] = stk.top();
+    else ngl[i] = 0;
+    stk.push(i);
+}
+
+// nearest smaller(<) to the left
+stack<int> stk;
+for(int i = 1; i <= n; i++){
+    while(!stk.empty() && v[stk.top()] >= v[i]){
+        stk.pop();
+    }
+    if(!stk.empty()) nsl[i] = stk.top();
+    else nsl[i] = 0;
+    stk.push(i);
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>NGR-NGL-NSR-NSL</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

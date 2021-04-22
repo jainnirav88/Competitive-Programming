@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+// Note: it doesn't guarantee distinct values.
+int rnd(int l, int r){
+  static mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+  return uniform_int_distribution<int>(l, r)(rng);
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>GETRANDOM</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++, source.cpp</scope>
+</snippet>
