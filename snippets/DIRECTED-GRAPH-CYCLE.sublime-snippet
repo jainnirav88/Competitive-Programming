@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
-bool hasCycle(){
-    /* For the directed graph. */
+// TC: O(n), for the directed graph
+bool has_cycle(){
     vector<bool> vis(n + 1, false);
     vector<bool> stk(n + 1, false);
 
@@ -20,10 +20,11 @@ bool hasCycle(){
     }
 
     return false;
+    // #pragma message("1-based indexing, be careful");
 }]]></content>
-    => Refer cp-algorithm.
+    refer cp-algorithm.
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>HASCYCLEDG</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
+    <scope>source.c++, source.cpp</scope>
 </snippet>

@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
+// TC: O(sqrt(n))
 vector<pair<int, int>> prime_factors(int n){
-    /* TC : O(sqrt(n)) */
     vector<pair<int, int>> pfact;
 
     int cnt = 0;
@@ -28,5 +28,5 @@ vector<pair<int, int>> prime_factors(int n){
     <tabTrigger>PRIMEFACTORIZE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
-    <!-- Check doc for details. -->
+    <!-- check doc for details. -->
 </snippet>

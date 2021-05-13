@@ -1,9 +1,8 @@
 <snippet>
     <content><![CDATA[
-int tin[N], tout[N];
-
-void eulerTour(int root){
-// time complexity : O(n) same as bfs
+// TC: O(n), same as bfs
+void euler_tour(int root){
+    vector<int> tin(n+1), tout(n+1);
     int timer = 0;
 
     function<void(int, int)> dfs = [&](int from, int par){

@@ -1,78 +1,82 @@
 <snippet>
     <content><![CDATA[
-class SegmentTree{
-    /* 1 as a root, create with SegmentTree sgt;
-       node = 1, start = 1/0, end = n/n-1 */
-    // #pragma message("1-indexed, be careful")
+class segment_tree{
 public :
-    vector<int> segTree;
+    vector<int> tree;
     int base = INT_MAX; // out of range.
 
-    SegmentTree(){
-        segTree.resize(4 * n);
-        buildSegTree(1, 1, n);
+    segment_tree(){
+        tree.resize(4 * n);
+        build(1, 1, n);
     }
 
     int join(int a, int b){
-        return min(a, b); 
+        return min(a, b);
     }
 
-    void buildSegTree(int node, int start, int end){
-        if(start == end)
-            segTree[node] = v[start];
+    void build(int node, int s, int e){
+        if(s == e)
+            tree[node] = v[s];
         else{
-            int mid = start + ((end - start) / 2);
-            buildSegTree(2*node, start, mid);
-            buildSegTree(2*node+1, mid+1, end);
-            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
+            int mid = s + ((e - s) / 2);
+            build(2*node, s, mid);
+            build(2*node+1, mid+1, e);
+            tree[node] = join(tree[2*node], tree[2*node+1]);
         }
     }
 
-    void printSegTree(){
-        for(auto x : segTree) cout << x << ' ';
-        cout << '\n';
+    void print_tree(){
+        cout << tree << '\n';
     }
 
-    int query(int node, int start, int end, const int &left, const int &right){
-        if(start >= left && end <= right) return segTree[node];
-        else if(end < left || start > right) return base;
+    int query(int node, int s, int e, const int &l, const int &r){
+        if(s >= l && e <= r) return tree[node];
+        else if(e < l || s > r) return base;
         else{
-            int mid = start + ((end - start) / 2);
-            return join(query(2*node, start, mid, left, right), 
-                        query(2*node+1, mid+1, end, left, right));
+            int mid = s + ((e - s) / 2);
+            return join(query(2*node, s, mid, l, r), 
+                        query(2*node+1, mid+1, e, l, r));
         }
     }
 
-    void valueUpdate(int node, int start, int end,
+    void value_update(int node, int s, int e,
                          const int &index, const int &value){
-        if(start == index && end == index)
-            segTree[node] = join(segTree[node], value); // change value
+        if(s == index && e == index)
+            tree[node] = join(tree[node], value); // change value
         else{
-            int mid = start + ((end - start) / 2);
-            if(index <= mid) valueUpdate(2*node, start, mid, index, value);
-            else valueUpdate(2*node+1, mid+1, end, index, value);
-            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
+            int mid = s + ((e - s) / 2);
+            if(index <= mid) value_update(2*node, s, mid, index, value);
+            else value_update(2*node+1, mid+1, e, index, value);
+            tree[node] = join(tree[2*node], tree[2*node+1]);
         }
     }
 
-    void rangeUpdate(int node, int start, int end,
-                         const int &left, const int &right, const int &value){
-        if(start == end)
-            if(start >= left && start <= right)
-                segTree[node] = join(segTree[node], value);
+    void range_update(int node, int s, int e, 
+                        const int &l, const int &r, const int &value){
+        if(s == e)
+            if(s >= l && s <= r)
+                tree[node] = join(tree[node], value);
         else{
-            int mid = start + ((end - start) / 2);
-            if(left <= mid) // left part
-                rangeUpdate(2*node, start, mid, left, right, value);
-            if(right >= mid) // right part
-                rangeUpdate(2*node+1, mid+1, end, left, right, value);
-            segTree[node] = join(segTree[2*node], segTree[2*node+1]);
+            int mid = s + ((e - s) / 2);
+            // left part
+            if(l <= mid){
+                range_update(2*node, s, mid, l, r, value);
+            }
+            // right part
+            if(r >= mid){
+                range_update(2*node+1, mid+1, e, l, r, value);
+            }
+            tree[node] = join(tree[2*node], tree[2*node+1]);
         }
     }
+
+    // 1 as a root, node = 1, s = 1/0, e = n/n-1
+    // #pragma message("1-indexed, be careful")
+    // copy: segment_tree sgt;
 };]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>SEGMENTTREE</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
-    <!-- Check doc for details. -->
+    <!-- check doc for details. -->
 </snippet>

@@ -62,7 +62,7 @@ struct LCA {
         return query(1, 0, euler.size() - 1, left, right);
     }
 };]]></content>
-    Note : copied from the cp-algorithm, refer cp-algorithm.
+    source : copied from the cp-algorithm, refer cp-algorithm.
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <description>LCA using segment tree.</description>
     <tabTrigger>LCA</tabTrigger>

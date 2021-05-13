@@ -3,5 +3,6 @@
 	{ "keys": ["f5"], "command": "build", "args": {"select": true} },
     { "keys": ["f6"], "command": "zoom_pane", "args": {"fraction": 0.76, "myOwn": 1} },
     { "keys": ["f8"], "command": "zoom_pane", "args": {"fraction": 1, "myOwn": 1} },
+    { "keys": ["alt+n"], "command": "new_snippet" }
 	// { "keys": ["alt+b"], "command": "cancel_build" }
 ]

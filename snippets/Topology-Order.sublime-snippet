@@ -1,10 +1,9 @@
 <snippet>
     <content><![CDATA[
 // TC: O(n)
-vector<int> topoSort(){
-
+vector<int> topo_sort(){
     vector<bool> vis(n + 1, false);
-    vector<int> topo;
+    vector<int> topo_order;
 
     function<void(int)> dfs = [&](int from)->void{
         vis[from] = true;
@@ -12,20 +11,21 @@ vector<int> topoSort(){
             if(vis[to]) continue;
             dfs(to);
         }
-        topo.push_back(from);
+        topo_order.push_back(from);
     };
 
     for(int i = 1; i <= n; i++){
         if(!vis[i]) dfs(i);
     }
 
-    reverse(topo.begin(), topo.end());
+    reverse(topo_order.begin(), topo_order.end());
 
-    return topo;
+    return topo_order;
     // #pragma message("1 based indexing, be careful")
 }]]></content>
+    <!-- refer cp-algorithm, doc. -->
+    example image : https://imgur.com/Q3MA6dZ
     <tabTrigger>TOPOSORT</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <!-- <scope>source.python</scope> -->
-    <!-- Check "cpalgorithm"/doc for the neat understanding. -->
+    <scope>source.c++, source.cpp</scope>
 </snippet>

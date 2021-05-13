@@ -1,8 +1,6 @@
 <snippet>
     <content><![CDATA[
 struct binaryLifting {
-    // create using binaryLifting bl(1);
-
     int bit, timer;
     vector<int> tin, tout;
     vector<vector<int>> up;
@@ -11,7 +9,7 @@ struct binaryLifting {
         tin.resize(n + 1);
         tout.resize(n + 1);
         timer = 0;
-        bit = ceil(log2(n + 1));
+        bit = __lg(n+1);
         up.assign(n + 1, vector<int>(bit + 1));
         dfs(root, root);
     }
@@ -36,8 +34,8 @@ struct binaryLifting {
         return tin[u] <= tin[v] && tout[u] >= tout[v];
     }
 
+    // O(logn), using binary_search
     int lca(int u, int v) {
-        // O(logn), using binary_search
         if (is_ancestor(u, v)) return u;
         if (is_ancestor(v, u)) return v;
 
@@ -49,8 +47,8 @@ struct binaryLifting {
         return up[u][0];
     }
 
+    // to jump above.
     int jump(int from, int step) {
-        // to jump above.
         assert(step <= (1ll << bit));
         for(int i = 0; i <= bit; i++){
             if((step >> i) & 1) from = up[from][i];
@@ -59,6 +57,7 @@ struct binaryLifting {
     }
 
     // #pragma message("1 based indexing, be careful")
+    // copy: binaryLifting bl(1);
 };]]></content>
     => refer cp-algorithm for more details.
     <description>binary lifting implementation</description>

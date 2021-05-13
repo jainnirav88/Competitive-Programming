@@ -1,0 +1,18 @@
+<snippet>
+    <content><![CDATA[
+vector<string> get_subsequences(string &str){
+    vector<string> subsequences;
+    for(int i = 0; i < (1ll<<siz(str)); i++){
+        string subseq;
+        for(int j = 0; j < siz(str); j++){
+            if((i >> j) & 1) subseq.pb(str[j]);
+        }
+        subsequences.pb(subseq);
+    }
+    return subsequences;
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>GET_SUBSEQUENCES</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++, source.cpp</scope>
+</snippet>

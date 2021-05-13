@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
+// TC: O(sqrt(n))
 bool isPrime(int n){
-    /* TC : O(sqrt(n)) */
     // Corner cases
     if (n <= 1) return false;
     if (n <= 3) return true;
@@ -9,7 +9,7 @@ bool isPrime(int n){
     // This is checked so that we can skip middle five numbers in below loop
     if (n % 2 == 0 || n % 3 == 0) return false;
 
-    for (int i = 5; i * i <= n; i = i + 6){
+    for (int i = 5; i * i <= n; i += 6){
         if (n % i == 0 || n % (i + 2) == 0) return false;
     }
 
@@ -19,5 +19,5 @@ bool isPrime(int n){
     <tabTrigger>ISPRIME</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
-    <!-- Check doc for details. -->
+    <!-- check doc for details. -->
 </snippet>

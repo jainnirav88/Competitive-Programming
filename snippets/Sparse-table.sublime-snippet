@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+struct sparse_table{
+    vector<vector<int>> table;
+    int LOGN = 24;
+
+    sparse_table(){
+        // this->LOGN = __lg(n) + 1;
+        table.resize(n+1, vector<int>(LOGN+1));
+        build();
+    }
+
+    int join(int x, int y){
+        return min(x, y);
+    }
+
+    void build(){
+        for(int i = 1; i <= n; i++){
+            table[i][0] = v[i];
+        }
+        for(int j = 1; j < LOGN; j++){
+            for(int i = 1; i + (1ll<<j) - 1 <= n; i++){
+                table[i][j] = join(table[i][j-1], table[i+(1ll<<(j-1))][j-1]);
+            }
+        }
+    }
+
+    int query(int l, int r){
+        int upto = __lg(r - l + 1);
+        return join(table[l][upto], table[r-(1ll<<upto)+1][upto]);
+    }
+
+    // #pragma message("1-indexed, be careful");
+    // copy : sparse_table spt;
+};]]></content>
+    source : https://cp-algorithms.com/data_structures/sparse-table.html
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>SPARSE-TABLE</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++, source.cpp</scope>
+</snippet>

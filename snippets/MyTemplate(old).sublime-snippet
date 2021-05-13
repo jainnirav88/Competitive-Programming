@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-#include<bits/stdc++.h> // 39 53 "baklol☺, take it easy"
+#include<bits/stdc++.h> // 56 70 "baklol☺, take it easy"
 using namespace std;
 
 // #include<ext/pb_ds/assoc_container.hpp>
@@ -11,16 +11,31 @@ using ll = long long int;
 using ld = long double;
 using ull = unsigned long long int;
 
-#define int       long long
-#define report(x) cout << ((x) ? "Yes" : "No") << '\n'
+#define rep(x, k, n)        for(int x = (k); x <= (n); ++x)
+#define rept(x, k, n)       for(int x = (k); x < (n); ++x)
+#define repr(x, k, n)       for(int x = (k); x >= (n); --x)
+#define pb                  push_back
+#define F                   first
+#define S                   second
+#define siz(x)              ((int)(x).size())
+#define o2(x)               ((x) * (x))
+#define all(x)              (x).begin(), (x).end()
+#define clr(x, k)           memset(x, k, sizeof(x)) // 0, -1
+#define printv(v, k, n)     rep(i, k, n) cout << v[i] << " \n"[i==n];
+#define print2dv(V,k,m,n)   rep(j, k, m) printv(V[j], k, n);
+#define report(x)           cout << ((x) ? "Yes" : "No") << '\n'
+#define getunique(x, y)     unique(x, y) - (x); // array should be shorted
+#define setbits(x)          __builtin_popcountll(x)
+#define int                 long long // "be careful"
+
+typedef vector<int>         vi;
+typedef pair<int, int>      pii;
 
 template<typename T1, typename T2> ostream& operator<<(ostream &ostream, const pair<T1, T2> &p){
-    ostream << p.first << " " << p.second;
-    return ostream;
+    ostream << p.first << " " << p.second; return ostream;
 }
 template<typename T> ostream& operator<<(ostream &ostream, const vector<T> &v){
-    for(auto &it : v) ostream << it << " ";
-    return ostream;
+    for(auto &it : v) ostream << it << " "; return ostream;
 }
 
 #ifdef LOCAL
@@ -42,7 +57,7 @@ constexpr int N = 3e5 + 5, M = 2e5 + 5;
 
 
 
-void TC_SOLVE() {
+void DONT_ASSUME_BLINDLY() {
 
 
 }
@@ -56,8 +71,7 @@ int32_t main() {
     int tc = 1;
     cin >> tc;
     for(int i = 1; i <= tc; i++) {
-        // cout << "Case #" << i << ": " << '\n';
-        TC_SOLVE();
+        DONT_ASSUME_BLINDLY();
 #ifdef LOCAL
         auto brute_force = [&]()->void{
 
@@ -67,7 +81,7 @@ int32_t main() {
 #endif
     }
 
-    cerr << "[time:" << 1.0 * clock() / CLOCKS_PER_SEC << "s] ";
+    cerr << "[time:" << 1.0*clock()/CLOCKS_PER_SEC << "s] ";
     return 0;
 }
 
@@ -100,7 +114,7 @@ int32_t main() {
 -> Be comfortable and in your control.
 */]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>MYTEMPLATE</tabTrigger>
+    <!-- <tabTrigger>MYTEMPLATE</tabTrigger> -->
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
-    <scope>source.c++, source.cpp</scope>
+    <!-- <scope>source.python</scope> -->
 </snippet>

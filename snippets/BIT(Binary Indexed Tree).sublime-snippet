@@ -2,8 +2,6 @@
     <content><![CDATA[
 template<class T>
 struct BIT{
-    // create using BIT<int> bit(n);
-
     int n;
     vector<T> bit_v;
 
@@ -34,6 +32,7 @@ struct BIT{
     }
 
     // #pragma message("BITs are 1-indexed, be careful")
+    // copy: BIT<int> bit(n);
 };]]></content>
     -> refer cp-algorithm for more details.
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->

@@ -1,9 +1,9 @@
 <snippet>
     <content><![CDATA[
 namespace Math{
+    // TC : O(log(exp))
     template<typename T>
-    T npow(T base, T exp) {
-        /* TC : O(log(exp)) */
+    T bipow(T base, T exp) {
         T res = 1;
         while (exp > 0) {
             if (exp & 1) res = (res * base);
@@ -13,9 +13,9 @@ namespace Math{
         return res;
     }
 
+    // TC: O(p)
     template<typename T>
     T fact(T p){
-        /* TC : O(p) */
         T res = 1;
         for(int i = 1; i <= p; i++){
             res *= i;
@@ -23,9 +23,9 @@ namespace Math{
         return res;
     }
 
+    // TC: O(n)
     template<typename T>
     T nCr(T n, T r){
-        /* TC: O(n) */
         if(n < r) return 0;
         T res = 1;
         if(r > (n-r)) r = n-r;
@@ -36,9 +36,9 @@ namespace Math{
         return res;
     }
 
+    // TC : O(n)
     template<typename T>
     T nPr(T n, T r){
-        /* TC : O(n) */
         if(n < r) return 0;
         T res = 1;
         for(int i = 0; i < r; i++){
@@ -46,12 +46,11 @@ namespace Math{
         }
         return res;
     }
-};
-using namespace Math;]]></content>
+}; using namespace Math;]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <description>math class</description>
+    <description>maths functions</description>
     <tabTrigger>MATHS</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
-    <!-- Check doc for more details. -->
+    <!-- check doc for more details. -->
 </snippet>

@@ -3,8 +3,8 @@
 // array<int, 3> g[N]; // from, to, weight
 int dist[N]; // dist from the source
 
+// TC: O(n*m), check wheather there is a negative edge cycle?
 bool bellmen_ford(){
-    /* Algo to check wheather there is a negative edge cycle?, TC : O(n*m) */
     for(int i = 0; i <= n; i++) dist[i] = inf;
     dist[0] = 0;
     for(int i = 1; i < n; i++){
@@ -25,8 +25,9 @@ bool bellmen_ford(){
 
     return hasCycle;
 }]]></content>
+    <!-- refer cp-algorithm -->
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>BELLMANFORD</tabTrigger>
+    <tabTrigger>BELLMAN_FORD</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
     <!-- For more details check doc. -->

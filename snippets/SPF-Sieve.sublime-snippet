@@ -3,8 +3,8 @@
 const int spfMax = ${1:1e5} + 5;
 int spf[spfMax];
 
+// TC : O(nlogn), "smallest prime factor"
 void computeSPF(){
-    /* TC : O(nlogn), "smallest prime factor" */
     spf[1] = 1;
     for(int i = 2; i < spfMax; i++){
         if(spf[i] == 0){

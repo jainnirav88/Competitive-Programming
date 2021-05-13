@@ -1,8 +1,6 @@
 <snippet>
     <content><![CDATA[
-class DSU {
-    // Copy : DSU dsu(n);
-public:
+struct DSU {
     vector<int> arr, sz; // size of roots.
     int components;
 
@@ -10,7 +8,7 @@ public:
         components = n;
         for(int i = 0; i <= n; i++){
             arr.push_back(i);
-            sz.push_back(1); // Initially all are root -> size = 1.
+            sz.push_back(1); // initially all are root -> size = 1.
         }
     }
 
@@ -39,23 +37,22 @@ public:
     }
 
     void printARR(){
-        /* to print the array, 1 - based */
+        // to print the array, 1 - based indexing
         for(int i = 1; i <= n; i++){
             cout << arr[i] << " \n"[i==n];
         }
     }
 
     void printSIZE(){
-        /* to print the size. size = 0 -> it's connected in some set, size != 0 -> it's root, 1 - based */
+        // to print the size, size = 0 -> it's connected in some set, size != 0 -> it's root, 1 - based indexing
         for(int i = 1; i <= n; i++){
             cout << sz[i] << " \n"[i==n];
         }
     }
 };
 
-// time-complexity: O(MlogN)
+// TC: O(M*logN)
 int mst_Kruskal(){
-
     DSU dsu(n);
 
     sort(edges.begin(), edges.end());

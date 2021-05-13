@@ -1,9 +1,8 @@
 <snippet>
     <content><![CDATA[
-// Use this if edges are less, time-complexity : O(M*logM), M = siz(edges)
+// use this if edges are less, TC: O(M*logM), M = siz(edges)
 int mst_prims(int root){
     vector<bool> vis(n+1, false);
-
     int res = 0;
 
     priority_queue<pii, vector<pii>, greater<pii>> pq;

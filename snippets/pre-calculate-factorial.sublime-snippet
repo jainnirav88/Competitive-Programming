@@ -1,0 +1,15 @@
+<snippet>
+    <content><![CDATA[
+mint fact[N];
+
+void pre_solve_fact(){
+    fact[0] = 1;
+    for(int i = 1; i < N; i++){
+        fact[i] = i * fact[i-1];
+    }
+}]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <!-- <tabTrigger>hello</tabTrigger> -->
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <!-- <scope>source.python</scope> -->
+</snippet>

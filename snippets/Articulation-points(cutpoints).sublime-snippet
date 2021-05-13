@@ -1,0 +1,41 @@
+<snippet>
+    <content><![CDATA[
+vector<int> find_cutpoints(){
+    vector<int> cutpoints;
+    vector<bool> vis(n+1, false);
+    vector<int> tin(n+1), low(n+1);
+    int counter = 0;
+
+    function<void(int, int)> dfs = [&](int from, int par)->void{
+        vis[from] = true;
+        tin[from] = low[from] = ++counter;
+        bool is_cutpoint = false;
+        int children = 0;
+        for(auto to : g[from]){
+            if(to == par) continue;
+            if(vis[to]){
+                low[from] = min(low[from], tin[to]);
+            }
+            else{
+                children++;
+                dfs(to, from);
+                low[from] = min(low[from], low[to]);
+                if(low[to] >= tin[from] && par != -1){
+                    is_cutpoint = true;
+                }
+            }
+        }
+        if(is_cutpoint) cutpoints.pb(from);
+        if(par == -1 && children > 1) cutpoints.pb(from);
+    };
+
+    dfs(1, -1);
+
+    return cutpoints;
+}]]></content>
+    source : cp-algorithm
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>ARTICULATION-POINTS, CUTPOINTS</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

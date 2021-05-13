@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-//         {U,  R, D,  L}
+// string dir = "URDL";
 // int dx[] = {-1, 0, 1,  0};
 // int dy[] = { 0, 1, 0, -1};
   

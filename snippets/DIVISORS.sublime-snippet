@@ -1,7 +1,7 @@
 <snippet>
     <content><![CDATA[
-vector<int> getDivisors(int n){
-    /* TC : O(sqrt(n)) , not in a sorted order */
+// TC: O(sqrt(n)), not in a sorted order
+vector<int> get_divisors(int n){
     vector<int> divisors;
     for(int i = 1; i * i <= n; i++){
         if(n % i == 0){

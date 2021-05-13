@@ -83,12 +83,12 @@ public:
 };
 using mint = modnum<mod>;
 /*/-------------------------------- MODINT --------------------------------/*/]]></content>
-    Description : Copied from the ecnerwala submission.
-    Use : When the result is too large and we have to calculate result with given modulo then this class is used.
-    More Details : 
-    -> Typecast variable accordingly to use this class.
-    -> Use int32_t to typecast.
-    -> Be careful for passing it as a parameter.
+    source : copied from the ecnerwala's submission.
+    use : when the result is too large and we have to calculate result with given modulo then this class is used.
+    more: 
+    -> typecast variable accordingly to use this class.
+    -> use int32_t to typecast.
+    -> be careful for passing it as a parameter.
     <tabTrigger>MINT</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->

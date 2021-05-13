@@ -1,0 +1,37 @@
+<snippet>
+    <content><![CDATA[
+vector<pair<int, int>> find_bridges(){
+    vector<pair<int, int>> bridges;
+    vector<bool> vis(n+1, false);
+    vector<int> tin(n+1), low(n+1);
+    int counter = 0;
+
+    function<void(int, int)> dfs = [&](int from, int par)->void{
+        vis[from] = true;
+        tin[from] = low[from] = ++counter;
+        for(auto to : g[from]){
+            if(to == par) continue;
+            if(vis[to]){
+                low[from] = min(low[from], tin[to]);
+            }
+            else{
+                dfs(to, from);
+                low[from] = min(low[from], low[to]);
+                if(low[to] > tin[from]){
+                    bridges.pb({min(from, to), max(from, to)});
+                }
+            }
+        }
+    };
+
+    dfs(1, 1);
+
+    sort(all(bridges));
+    return bridges;
+}]]></content>
+    source : cp-algorithm
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>BRIDGES-GRAPH</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++</scope>
+</snippet>

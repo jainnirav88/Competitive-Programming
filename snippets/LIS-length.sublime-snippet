@@ -9,12 +9,12 @@ int lis_len(){
     }
     return lis_v.size();
 
-/* change array(v) accordingly
- * strictly increasing, O(n*logn)
- * change lower_bound to upper_bound for longest nondecreasing subsequence*/
+// change array(v) accordingly
+// strictly increasing, O(n*logn)
+// change lower_bound to upper_bound for longest nondecreasing subsequence
 }]]></content>
     <description>LIS-LEN</description>
-    <!-- source : https://codeforces.com/blog/entry/13225?#comment-495271 -->
+    source : https://codeforces.com/blog/entry/13225?#comment-495271
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>LIS_LEN</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->

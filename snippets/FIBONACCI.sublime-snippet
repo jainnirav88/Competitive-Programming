@@ -2,9 +2,9 @@
     <content><![CDATA[
 template<class T>
 class Fibonacci{
-    // copy : Fibonacci<dataType> fib;
-    /* Fibonacci sequence : 0 1 1 2 3 5 8 13 ...... */
-    /* F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2 ..... */
+    // copy : Fibonacci<int> fib;
+    // Fibonacci sequence : 0 1 1 2 3 5 8 13 ......
+    // F(0) = 0, F(1) = 1, F(2) = 1, F(3) = 2 .....
 public:
     vector<vector<T>> multiply(vector<vector<T>> &v1, vector<vector<T>> &v2){
         vector<vector<T>> res(2, vector<T>(2));
@@ -43,5 +43,5 @@ public:
     <tabTrigger>FIBONACCI</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
-    <!-- Check doc for details. -->
+    <!-- check doc for details. -->
 </snippet>
