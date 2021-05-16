@@ -1,4 +1,4 @@
-#include <bits/stdc++.h> // 198
+#include <bits/stdc++.h> // 203
 using namespace std;
 
 using ll = long long int;
@@ -18,19 +18,21 @@ using ull = unsigned long long int;
 #define printv(v, k, n)     rep(i, k, n) cout << v[i] << " \n"[i==n];
 #define print2dv(V,k,n,m)   rep(j, k, n) printv(V[j], k, m);
 #define report(x)           cout << ((x) ? "Yes" : "No") << '\n'
+#define getunique(x, y)     unique(x, y) - (x); // array should be shorted
 #define setbits(x)          __builtin_popcountll(x)
 #define int                 long long // "be carefull"
 
-const long long mn_val = 0; // min-value in the test case
-const long long mx_val = 1e18; // max-value
-const int mn_len = 1; // min-length of the array, string etc.
-const int mx_len = 100; // max-length of the array, string etc.
+// min, max-value in the test case
+constexpr long long mn_val = 0, mx_val = 1e18;
+// min, max-length of the array, string etc.
+constexpr int mn_len = 1, mx_len = 100000;
 
-mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
-
-long long rnd(long long x = mn_val, long long y = mx_val){
-    return (rng() % (y - x + 1)) + x;
-};
+// call rnd(min_val, max_val);
+// Note: it doesn't guarantee distinct values.
+static mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+long long rnd(long long l, long long r){
+  return uniform_int_distribution<long long>(l, r)(rng);
+}
 
 namespace generator{
 
@@ -54,6 +56,7 @@ namespace generator{
     }
 
     string get_string(int len = -1, bool lowercase_only = true){
+        int min_char = 'a' - 'a', max_char = 'z' - 'a';
 
         if(len == -1){
             len = rnd(mn_len, mx_len);
@@ -62,13 +65,13 @@ namespace generator{
         string str(len, '0');
 
         for(int i = 0; i < len; i++){
-            str[i] = (rnd(0, 25) + 'a');
+            str[i] = (rnd(min_char, max_char) + 'a');
         }
 
         if(lowercase_only) return str;
 
-        for(auto &i : str){
-            if(rng() & 1) i ^= 32; // swap case (make c to C)
+        for(auto &ch : str){
+            if(rng() & 1) ch ^= 32; // swap case (make c to C)
         }
 
         return str;
@@ -77,9 +80,7 @@ namespace generator{
     template<typename T>
     vector<T> get_array(int len = -1, T a = mn_val, T b = mx_val){
 
-        if(len == -1){
-            len = rnd(mn_len, mx_len);
-        }
+        if(len == -1) len = rnd(mn_len, mx_len);
 
         vector<T> v(len);
 
@@ -113,10 +114,13 @@ namespace generator{
 
         vector<pair<int, int>> res;
         set<pair<int , int>> edge_set;
-        assert(2 * m <= 1ll * n * (n-1)); // maximum condition for edge
+
+        // maximum condition for edge
+        assert(2 * m <= 1ll * n * (n-1));
 
         if(connected){
-            assert(m >= n-1); // minimum edges of connected graph
+            // minimum edges of connected graph
+            assert(m >= n-1);
 
             res = get_tree(n);
 
@@ -135,15 +139,15 @@ namespace generator{
                     edge_set.insert({u,v});
                     break;
                 }
-                /*
-                label:
-                int u = rnd(1, n);
-                int v = rnd(1, n);
 
-                if(u == v || edge_set.count({u, v}) || edge_set.count({v, u}))
-                    goto label;
-                else edge_set.insert({u,v});
-                */
+                // label:
+                // int u = rnd(1, n);
+                // int v = rnd(1, n);
+
+                // if(u == v || edge_set.count({u, v}) || edge_set.count({v, u}))
+                //     goto label;
+                // else edge_set.insert({u,v});
+
             }
         }
         else{
@@ -159,14 +163,14 @@ namespace generator{
                     break;
                 }
 
-                /*
-                label2:
-                int u = rnd(1, n);
-                int v = rnd(1, n);
 
-                if(u == v || edge_set.count({u, v}) || edge_set.count({v, u})) goto label2;
-                else edge_set.insert({u,v});
-                */
+                // label2:
+                // int u = rnd(1, n);
+                // int v = rnd(1, n);
+
+                // if(u == v || edge_set.count({u, v}) || edge_set.count({v, u})) goto label2;
+                // else edge_set.insert({u,v});
+
             }
         }
 
@@ -186,17 +190,16 @@ using namespace generator;
 /*/-------------------------------------------------------------------------/*/
 
 // comment/uncomment the next line in if you have multi_test.
-#define MULTI_TEST
+// #define MULTI_TEST
 
 constexpr int min_tests = 1, max_tests = 10;
-constexpr int min_val = 1, max_val = 1000000000;
-constexpr int min_len = 1, max_len = 100000;
+constexpr int min_val = 1, max_val = 1e18;
+constexpr int min_len = 1, max_len = 120;
 
 // complete this function for each test case.
 // namespace examples at last
 void make_test(){
-
-
+    cout << rng() << '\n';
 }
 
 int32_t main(){
@@ -241,14 +244,13 @@ int32_t main(){
 
 -> get_simple_graph(nodes, edges, bool connected = 1)
 // you can change connected/disconnected option too. (list of edges)
-
 */
 
 struct demo{
     demo(){
 
         cout << get_num() << endl;
-        cout << get_num(10 , 20) << "\n";
+        cout << get_num(10, 20) << "\n";
 
         vector<int> v = get_array(12ll, 1ll, 1000ll);
         // size, min_element, max_element.
@@ -256,14 +258,14 @@ struct demo{
         // see definition for details.
 
         cout << "the array generated is {";
-        for(auto i: v)
-            cout << i << ", ";
+        for(auto it : v)
+            cout << it << ", ";
         cout << " }" << endl;
 
         vector<pair<int, int>> tree = get_tree(5);
         cout << "the tree generated has edgelist { ";
-        for(auto i: tree)
-            cout << "(" << i.first << ", " << i.second << ") , ";
+        for(auto [u, v]: tree)
+            cout << "(" << u << ", " << v << ") , ";
         cout << " }" << endl;
 
         // similary for graph
@@ -337,4 +339,3 @@ namespace examples{
     }
 };
 using namespace examples;
-
