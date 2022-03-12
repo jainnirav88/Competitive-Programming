@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-bool is_connected(){
+bool is_graph_connected(){
     vector<bool> vis(n+1, false);
     function<void(int)> dfs = [&](int from)->void{
         vis[from] = true;
@@ -13,7 +13,7 @@ bool is_connected(){
     return (count(all(vis), true) == n);
 }]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-    <tabTrigger>IS_CONNECTED_GRAPH</tabTrigger>
+    <tabTrigger>IS_GRAPH_CONNECTED</tabTrigger>
     <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <!-- <scope>source.python</scope> -->
 </snippet>

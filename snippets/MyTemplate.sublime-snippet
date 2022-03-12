@@ -56,7 +56,7 @@ int32_t main() {
     int tc = 1;
     cin >> tc;
     for(int i = 1; i <= tc; i++) {
-        cout << "Case #" << i << ": " << '\n';
+        // cout << "Case #" << i << ": ";
         TC_SOLVE();
 #ifdef LOCAL
         auto brute_force = [&]()->void{
@@ -91,7 +91,7 @@ int32_t main() {
 /*
 -> Don't assume blindly.
 -> Focus on problem.
--> Recovery from the failure.
+-> Recovery from failure.
 -> Do consider worst case time complexity.
 -> If solution is barely passing then do submit again after doing optimization.
 -> Be careful in nested loop. Iterating variable name should be different for both loop.

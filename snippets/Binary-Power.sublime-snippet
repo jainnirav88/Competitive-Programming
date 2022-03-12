@@ -1,8 +1,8 @@
 <snippet>
     <content><![CDATA[
+// O(logn)
 template<class T>
 T bpow(T base, T exp){
-    /* O(logn) */
     T result = 1;
     while(exp > 0){
         if(exp & 1) result *= base;

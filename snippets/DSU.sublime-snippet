@@ -1,19 +1,20 @@
 <snippet>
     <content><![CDATA[
 struct DSU {
-    vector<int> arr, sz; // size of roots.
+    vector<int> parent, siz; // size of roots.
     int components;
 
-    DSU(int n){ // n = size
+    DSU(int n){
+        // n = size here
         components = n;
         for(int i = 0; i <= n; i++){
-            arr.push_back(i);
-            sz.push_back(1); // Initially all are root -> size = 1.
+            parent.push_back(i);
+            siz.push_back(1); // Initially all are root -> size = 1.
         }
     }
 
     int root(int v){
-        while(v != arr[v]) v = arr[v];
+        while(v != parent[v]) v = parent[v];
         return v;
     }
 
@@ -26,11 +27,11 @@ struct DSU {
         int root_u = root(u);
         if(root_v == root_u) return false;
 
-        if(sz[root_v] < sz[root_u]) swap(root_v, root_u);
+        if(siz[root_v] < siz[root_u]) swap(root_v, root_u);
         
-        arr[root_u] = root_v;
-        sz[root_v] += sz[root_u];
-        sz[root_u] = 0;
+        parent[root_u] = root_v;
+        siz[root_v] += siz[root_u];
+        siz[root_u] = 0;
         components--;
         
         return true;
@@ -39,14 +40,14 @@ struct DSU {
     void printARR(){
         // to print the array.
         for(int i = 1; i <= n; i++){
-            cout << arr[i] << " \n"[i==n];
+            cout << parent[i] << " \n"[i==n];
         }
     }
 
     void printSIZE(){
         // to print the size, size = 0 -> it's connected in some set, size != 0 -> it's root.
         for(int i = 1; i <= n; i++){
-            cout << sz[i] << " \n"[i==n];
+            cout << siz[i] << " \n"[i==n];
         }
     }
     // copy : DSU dsu(n);

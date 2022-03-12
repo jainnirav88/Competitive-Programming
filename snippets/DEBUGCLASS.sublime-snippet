@@ -1,7 +1,15 @@
 <snippet>
     <content><![CDATA[
-template<typename T1, typename T2> ostream& operator<<(ostream &ostream, const pair<T1, T2> &p){ ostream << p.first << " " << p.second; return ostream; }
-template<typename T> ostream& operator<<(ostream &ostream, const vector<T> &v){ for(auto &it : v) ostream << it << " "; return ostream; }
+template<typename T1, typename T2>
+ostream& operator<<(ostream &ostream, const pair<T1, T2> &p){
+    ostream << p.first << " " << p.second;
+    return ostream;
+}
+template<typename T>
+ostream& operator<<(ostream &ostream, const vector<T> &v){
+    for(auto &it : v) ostream << it << " ";
+    return ostream; 
+}
 
 #ifdef LOCAL
 #include<E:\Programming\CP\A-Main\debug\debug_code.h> // errors : debug_code.h

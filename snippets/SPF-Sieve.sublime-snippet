@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[
-const int spfMax = ${1:1e5} + 5;
+const int spfMax = ${1:1e5} + 5;$0
 int spf[spfMax];
 
 // TC : O(nlogn), "smallest prime factor"

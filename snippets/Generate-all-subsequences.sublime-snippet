@@ -5,9 +5,9 @@ vector<string> get_subsequences(string &str){
     for(int i = 0; i < (1ll<<siz(str)); i++){
         string subseq;
         for(int j = 0; j < siz(str); j++){
-            if((i >> j) & 1) subseq.pb(str[j]);
+            if((i >> j) & 1) subseq.push_back(str[j]);
         }
-        subsequences.pb(subseq);
+        subsequences.push_back(subseq);
     }
     return subsequences;
 }]]></content>

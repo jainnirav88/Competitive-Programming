@@ -1,0 +1,49 @@
+<snippet>
+    <content><![CDATA[
+struct Trie {
+    vector<vector<int>> nxt;
+    vector<bool> is_terminal;
+    char start_ch = 'a';
+
+    Trie(bool upper_case = false) {
+        nxt.push_back(vector<int>(26));
+        is_terminal.push_back(false);
+        if(upper_case) start_ch = 'A';
+    }
+    
+    void insert(string &word) {
+        int node = 0; // root node
+        for(auto &ch : word){
+            if(!nxt[node][ch-start_ch]){
+                nxt[node][ch-start_ch] = nxt.size();
+                nxt.push_back(vector<int>(26));
+                is_terminal.push_back(false);
+            }
+            node = nxt[node][ch-start_ch];
+        }
+        is_terminal[node] = true;
+    }
+    
+    bool search(string &word) {
+        int node = 0; // start from root
+        for(auto &ch : word){
+            if(!nxt[node][ch-start_ch]) return false;
+            node = nxt[node][ch-start_ch];
+        }
+        return is_terminal[node];
+    }
+    
+    bool startsWith(string &prefix) {
+        int node = 0; // start from root
+        for(auto &ch : prefix){
+            if(!nxt[node][ch-start_ch]) return false;
+            node = nxt[node][ch-start_ch];
+        }
+        return true;
+    }
+};]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>TRIE</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.c++, source.cpp</scope>
+</snippet>

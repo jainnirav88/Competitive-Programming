@@ -192,14 +192,29 @@ using namespace generator;
 // comment/uncomment the next line in if you have multi_test.
 // #define MULTI_TEST
 
-constexpr int min_tests = 1, max_tests = 10;
+constexpr int min_tests = 1, max_tests = 1;
 constexpr int min_val = 1, max_val = 1e18;
-constexpr int min_len = 1, max_len = 120;
+constexpr int min_len = 1, max_len = 10;
 
 // complete this function for each test case.
 // namespace examples at last
 void make_test(){
-    cout << rng() << '\n';
+
+    int n = get_num(min_len, max_len);
+    int m = get_num(min_len, max(1ll, ((n * (n - 1)) / 2) - 3));
+
+    cout << n << " " << m << '\n';
+    
+    vector<pair<int, int>> edges = get_simple_graph(n, m, false);
+
+    for(auto [u, v] : edges) {
+        cout << u << " " << v << "\n";
+    }
+
+    // int n = get_num(min_len, max_len);
+    // string s = get_string(n);
+    // cout << n << ' ' << 26 << "\n";
+    // cout << s << "\n";
 }
 
 int32_t main(){
