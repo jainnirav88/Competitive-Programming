@@ -189,15 +189,15 @@ using namespace generator;
 /*/------------------------- Modify Below function -------------------------/*/
 /*/-------------------------------------------------------------------------/*/
 
-// comment/uncomment the next line in if you have multi_test.
-// #define MULTI_TEST
+// comment/uncomment the next line if you have multi_test accordingly
+// #define MULTI_TEST // uncomment for multi_test and vice versa
 
 constexpr int min_tests = 1, max_tests = 1;
 constexpr int min_val = 1, max_val = 1e18;
 constexpr int min_len = 1, max_len = 10;
 
-// complete this function for each test case.
-// namespace examples at last
+// Complete this function for each test case
+// namespace examples at last of this file
 void make_test(){
 
     int n = get_num(min_len, max_len);
@@ -245,20 +245,20 @@ int32_t main(){
 
 /*
 -> get_num(a, b);
-// gives a random number between [a, b] - if a, b given.
-// otherwise get_num() gives a random_number between 0 and 10**18;
+// Gives a random number between [a, b] - if a, b given
+// Otherwise get_num() gives a random_number between 0 and 10**18
 
--> get_string(l, bool lowercase_only = true);
-// gives a string of length l.
-// (by default lowercase you can change that by calling get_string(l, false);
+-> get_string(len, bool lowercase_only = true);
+// Gives a string of length len
+// By default lowercase - You can change it by calling get_string(len, false)
 
 -> get_array(len, min_num_of_array, max_num_of_array)
-    // note that this returns a vector;
+// Note that this returns a vector
 
 -> get_tree(n) gives a tree of n nodes(list of edges)
 
 -> get_simple_graph(nodes, edges, bool connected = 1)
-// you can change connected/disconnected option too. (list of edges)
+// You can change connected/disconnected option too (list of edges)
 */
 
 struct demo{
@@ -295,7 +295,7 @@ struct demo{
 
 /*
 
-=> for a question having sample tests like this
+=> For a question having sample tests like this
 
 T
 N
@@ -353,4 +353,5 @@ namespace examples{
         // cout << s << '\n';
     }
 };
+
 using namespace examples;
