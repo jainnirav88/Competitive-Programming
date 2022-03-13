@@ -1,4 +1,5 @@
 Tutorial link: https://docs.google.com/document/d/1O1WCZQtjlKFpJuB59x7TuPWD0XQ3oElOKg2Z_7EZgJ0/edit#
+
 Other: https://youtu.be/JXTVOyQpSGM, https://codeforces.com/blog/entry/78985, https://ali-ibrahim137.github.io/competitive/programming/2020/08/23/Stress-Testing.html
 
 => Source: 
