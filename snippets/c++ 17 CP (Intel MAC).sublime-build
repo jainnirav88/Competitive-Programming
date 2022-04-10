@@ -1,0 +1,11 @@
+{
+    "cmd": "g++ -DLOCAL -std=c++17 $file -o $file_base_name && ./$file_base_name<../ip_op/ip.txt>../ip_op/op.txt",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "shell": true,
+    "working_dir": "$file_path",
+    "selector": "source.cpp"
+}
+
+// g++ -DLOCAL -std=c++17 assoc_container.hpp // -> to precompile the pb_ds headers
+// g++ -DLOCAL -std=c++17 stdc++.h // -> to precompile the bits/stdc++.h headers
+// note: Use this command from where header files is present.

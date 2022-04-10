@@ -24,7 +24,7 @@ template<typename T> ostream& operator<<(ostream &ostream, const vector<T> &v){
 }
 
 #ifdef LOCAL
-#include</Users/niravjain/Nirav/Programming/CP/A-Main/debug/debug_code.h> // errors : debug_code.h
+#include<E:\Programming\CP\A-Main\debug\debug_code.h> // errors : debug_code.h
 #else
 #define deb(...)
 #define debv(v, k, n)

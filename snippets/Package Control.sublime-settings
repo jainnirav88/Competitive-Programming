@@ -9,4 +9,5 @@
 		"Package Control",
 		"PackageResourceViewer"
 	],
+	"debug": true,
 }

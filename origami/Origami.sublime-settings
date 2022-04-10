@@ -1,0 +1,28 @@
+{
+    /**
+     * The "saved_layouts" key holds a list of previously
+     * saved layout settings. These can be set using the
+     * "Origami: Save Current Layout" command, they can be
+     * restored using the "Origami: Restore Saved Layout"
+     * command and can be removed using the "Origami: Remove
+     * Saved Layout" command.
+     *
+     * Valid format: {"nickname": XXXX, "cells": XXXX,
+     *                "cols": XXXX, "rows": XXXX}
+     */
+    "saved_layouts": [],
+
+    // Create a new pane when switching in a direction without one.
+    "create_new_pane_if_necessary": true,
+
+    // Automatically zoom the active pane.
+    // Set it to `true` for the default zoom, or to a user-definable
+    // fraction of the screen, such as "0.75".
+    "auto_zoom_on_focus": false,
+
+    // Automatically close a pane once you've closed the last file in it.
+    "auto_close_empty_panes": false,
+
+    // Destroy unused panes when switching away from them.
+    "destroy_empty_panes": false,
+}

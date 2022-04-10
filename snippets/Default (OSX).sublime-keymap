@@ -1,0 +1,8 @@
+[
+    { "keys": ["f1"], "command": "cancel_build" },
+    { "keys": ["f9"], "command": "build", "args": {"select": true} },
+    { "keys": ["f8"], "command": "zoom_pane", "args": {"fraction": 0.76, "myOwn": 1} },
+    { "keys": ["f10"], "command": "zoom_pane", "args": {"fraction": 1, "myOwn": 1} },
+    { "keys": ["alt+n"], "command": "new_snippet" },
+    { "keys": ["alt+b"], "command": "cancel_build" }
+]

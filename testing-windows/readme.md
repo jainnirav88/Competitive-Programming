@@ -4,8 +4,6 @@ Other: https://youtu.be/JXTVOyQpSGM, https://codeforces.com/blog/entry/78985, ht
 
 => Source: 
 
--> From someone's git repo, I forgot the name
-
 => Process:
 
 -> Copy and paste your efficient solution (the one which is failing) in the efficient.cpp file and copy and paste your naive solution (the one which is brute-force)(someone else's solution which is correct in case of practice) in the naive.cpp file
@@ -38,8 +36,4 @@ Other: https://youtu.be/JXTVOyQpSGM, https://codeforces.com/blog/entry/78985, ht
 
 => How to write an efficient generator?
 
--> later...
-
 => How to find the failing test case?
-
--> later...
