@@ -1,6 +1,6 @@
-# CP
+# Competitive Programming
 
-* My CP (Competitive Programming) Sublime snippets (templates) and Stress testing template
+* My Competitive Programming (CP) Sublime snippets (templates) and Stress testing template
 
 ## CP setup for Intel Macbook
 
