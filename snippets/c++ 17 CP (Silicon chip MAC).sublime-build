@@ -21,4 +21,4 @@
 
 // g++ -DLOCAL -std=c++17 assoc_container.hpp // -> to precompile the pb_ds headers
 // g++ -DLOCAL -std=c++17 stdc++.h // -> to precompile the bits/stdc++.h headers
-// note: Use this command from where header files is present.
+// note: Use this command from the location of header files

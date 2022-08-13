@@ -18,3 +18,5 @@
 // g++ -DLOCAL -std=c++17 assoc_container.hpp // -> to precompile the headers
 // g++ -DLOCAL -std=c++17 stdc++.h // -> to precompile the headers
 // note : you need to go where header files are present.
+
+// For windows

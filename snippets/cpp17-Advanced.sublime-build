@@ -20,3 +20,5 @@
     "working_dir": "$file_path",
     "selector": "source.cpp"
 }
+
+// For windows
