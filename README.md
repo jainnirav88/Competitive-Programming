@@ -56,4 +56,4 @@
   * Copy [origami.py](/origami/origami.py) file and paste it into origami.py file of extracted origami.py file and save it.
   * Checkout [/snippets/Default (OSX).sublime-keymap](/snippets/Default%20(OSX).sublime-keymap) to use origami shortcuts
 
-* Now use [C++17 CP Intel MAC](/snippets/c%2B%2B%2017%20CP%20(Intel%20MAC).sublime-build) build to build your c++ program :)
+* Now use [c++ 17 CP (Silicon chip MAC)](/snippets/c%2B%2B%2017%20CP%20(Silicon%20chip%20MAC).sublime-build) build to build your c++ program :)
